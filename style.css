@@ -15,15 +15,13 @@ body {
 
 #header {
 	width:100%;
-	background-color:#2d2d2a;
-	height:80px;
+	background-color:gray;
+	height:100px;
 }
 
 #content {
 	width: 100%;
 	padding-bottom:100px;
-	background-image:url("img/branschdagen_background.jpg");
-	background-size:cover;
 }
 
 .container {
@@ -32,139 +30,23 @@ body {
 	margin-left:7.5%;
 	margin-right:4%;
 	margin-top:60px;
-	background-color:rgba(255,255,255,0.95);
+	background-color:gray;
 	min-height:500px;
 }
 
 #feedContainer {
 	display:inline-block;
-	vertical-align: top;
-	margin-top:60px;
 	width:20%;
 	margin-right:7.5%;
-	background-color:rgba(255,255,255,0.15);
+	background-color:gray;
 	min-height:500px;
 }
 
 #footer {
-	background-color:#2d2d2a;
+	background:gray;
 	width:100%;
-	height:75px;
+	height:100px;
 	position:absolute;
 	bottom:0;
 	left:0;
-}
-
-#bdLogo {
-	box-sizing:border-box;
-	padding-left:30px;
-	padding-top:15px;
-	padding-bottom:15px;
-	max-height:100%;
-}
-
-#menuIcon {
-	float:right;
-	box-sizing:border-box;
-	padding:27px;
-	max-height:100%;
-}
-
-.headline {
-	background-color:rgba(45,45,42,0.9);
-	color:white;
-	font-family:lato;
-	font-size:18pt;
-	padding-bottom:5px;
-	padding-top:20px;
-	text-align: center;
-
-}
-
-.headline hr {
-	margin:0px;
-	margin-top:10px;
-	
-}
-
-#feedContainer .headline hr{
-	border:1.7px solid #2bb482;
-}
-
-.container .headline hr {
-	border:1.7px solid #328c96;
-}
-
-#aboutText {
-	padding:20px;
-	padding-bottom:35px;
-	font-family:Lato, Open Sans, Sans-Serif;
-	color:#1c1c1c;
-}
-
-#aboutText a{
-	text-decoration:none;
-	font-weight:bold;
-	-webkit-transition: 0.35s;
-	transition: 0.35s;
-	color:#1c1c1c;
-}
-
-#aboutText > a:hover{
-	-webkit-transition: 0.35s;
-	transition: 0.35s;
-	color:#ddd310;
-}
-
-#menu {
-	overflow:hidden;
-	background-color:#2d2d2a;
-	color:white;
-	text-align:center;
-}
-
-#menu.menuOpen{
-	-webkit-transition: 0.3s;
-	transition: 0.3s;
-	height:50px;
-}
-
-#menu.menuClosed {
-	-webkit-transition: 0.3s;
-	transition: 0.3s;
-	height:0px;
-}
-
-#menu a {
-	display:inline-block;
-	width:200px;
-	max-width:18%;
-	font-size:15pt;
-	font-family:Lato, "Open Sans", Sans-Serif;
-}
-
-#menu a{
-	text-decoration: none;
-	-webkit-transition: 0.35s;
-	transition: 0.35s;
-	color:white;
-}
-
-#menu > a:hover{
-	-webkit-transition: 0.35s;
-	transition: 0.35s;
-	color:#ddd310;
-}
-
-.footerText {
-  color: #ddd310;
-  box-sizing: border-box;
-  padding: 20px;
-  padding-left:30px;
-  font-size:10pt;
-}
-
-.footerText a {
-	color:#ddd310;
-	text-decoration:none;
 }
