@@ -1,0 +1,46 @@
+h1 {
+	font-family: Raleway, Open Sans, Sans Serif;
+}
+
+body {
+	font-family: Open Sans;
+}
+
+.inputBox {
+	width:30%;
+	min-width:300px;
+	min-width:;
+	border:1px solid black;
+	box-sizing:border-box;
+	padding:20px;
+	margin:30px;
+	display:block;
+	float:left;
+}
+
+.signatureBox {
+	font-size:11pt;
+	width:40%;
+	min-width:400px;
+	border: 1px solid black;
+	box-sizing:border-box;
+	padding:20px;
+	margin:30px;
+	display:block;
+	float:left;
+	font-family:Helvetica, Sans Serif;
+}
+
+.inputField{
+	box-sizing:border-box;
+	padding:10px;
+	width:100%;
+}
+
+#name {
+	color:#565759;
+}
+
+#branschdagsgruppen{
+	color:#DDD310;
+}

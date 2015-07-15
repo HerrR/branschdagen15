@@ -1,0 +1,48 @@
+html, body {
+	margin:0px;
+	padding:0px;
+	height:100%;
+}
+
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+#header {
+	width:100%;
+	background-color:gray;
+	height:100px;
+}
+
+#content {
+	width: 100%;
+	padding-bottom:100px;
+}
+
+.container {
+	display:inline-block;
+	width:60%;
+	margin-left:7.5%;
+	margin-right:4%;
+	margin-top:60px;
+	background-color:gray;
+	min-height:500px;
+}
+
+#feedContainer {
+	display:inline-block;
+	width:20%;
+	margin-right:7.5%;
+	background-color:gray;
+	min-height:500px;
+}
+
+#footer {
+	background:gray;
+	width:100%;
+	height:100px;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
