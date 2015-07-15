@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-		<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700|Raleway:200,400|Open+Sans:100,400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700|Raleway:200,400|Open+Sans:100,400,700|Lato:400' rel='stylesheet' type='text/css'>
 		<!-- <link rel="icon" type="image/x-icon" href="img/favicon.ico"/> -->
 		<!-- <link rel="icon" href="img/favicon.ico"/> -->
 		<!-- <link rel="icon" sizes="192x192" href="img/Logo-small.png"> -->
@@ -26,19 +26,36 @@
 	</head>
 	<body ng-controller="AppCtrl">
 		<div id="wrapper">
-			<div id="header"></div>
+			<div id="header">
+				<img src="img/branschdagen_logo.png" id="bdLogo"/>
+				<img src="img/menu_icon.png" id="menuIcon" ng-click="toggleMenu()"/>
+			</div>
+			<div id="menu" class="menuClosed">
+				<a href="#/#">Hem</a>
+				<a href="#/#">Mässan</a>
+				<a href="#/#">Sittningen</a>
+				<a href="#/#">Prislista</a>
+				<a href="#/#">Kontakt</a>
+			</div>
 			<div id="content">
 				<div class="container" ng-view></div>
 				<div id="feedContainer">
+					<div class="headline">
+						#Branschdag15
+						<hr/>
+					</div>
 
-					Feed goes here!
+					Här ska det vara ett flöde med allt folk skriver med #Branschdag15 på Twitter och instagram.
 
 					<!-- <a class="twitter-timeline" href="https://twitter.com/hashtag/Branschdag15" data-widget-id="616325330412924928">#Branschdag15 Tweets</a> -->
 					<!-- <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> -->
 
 				</div>
 			</div>
-			<div id="footer"></div>
+			<div id="footer">
+				<div class="footerText">Sektionen för Medieteknik, KTH<br/>
+				<a href="http://www.medieteknik.com" target="_blank">www.medieteknik.com</a></div>
+			</div>
 		</div>
 	</body>
 </html>
