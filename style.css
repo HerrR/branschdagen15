@@ -4,6 +4,10 @@ html, body {
 	height:100%;
 }
 
+body {
+	background-color:#2d2d2a;
+}
+
 #wrapper {
 	min-height:100%;
 	position:relative;
