@@ -4,6 +4,12 @@ html, body {
 	height:100%;
 }
 
+body {
+	background-image:url("img/branschdagen_background.jpg");
+	background-size:cover;
+	background-repeat: no-repeat;
+}
+
 #wrapper {
 	min-height:100%;
 	position:relative;
@@ -18,8 +24,7 @@ html, body {
 #content {
 	width: 100%;
 	padding-bottom:100px;
-	background-image:url("img/branschdagen_background.jpg");
-	background-size:cover;
+
 }
 
 .container {
