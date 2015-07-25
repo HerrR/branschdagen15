@@ -4,23 +4,28 @@ app.config(['$routeProvider',
     $routeProvider.
       when('/', {
         templateUrl: 'partials/home.html',
-        controller: 'HomeCtrl'
+        controller: 'HomeCtrl',
+        activeTab: 'home'
       }).
       when('/massan',{
         templateUrl: 'partials/expo.html',
-        controller: 'ExpoCtrl'
+        controller: 'ExpoCtrl',
+        activeTab: 'expo'
       }).
       when('/sittning', {
         templateUrl: 'partials/dinner.html',
-        controller: 'DinnerCtrl'
+        controller: 'DinnerCtrl',
+        activeTab: 'dinner'
       }). 
       when('/prislista', {
         templateUrl: 'partials/prices.html',
-        controller: 'PricesCtrl'
+        controller: 'PricesCtrl',
+        activeTab: 'prices'
       }).
       when('/kontakt',{
         templateUrl: 'partials/contact.html',
-        controller: 'ContactCtrl'
+        controller: 'ContactCtrl',
+        activeTab: 'contact'
       }).
       otherwise({
         redirectTo: '/'

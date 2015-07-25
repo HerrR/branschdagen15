@@ -1,171 +1,233 @@
 html, body {
-	margin:0px;
-	padding:0px;
-	/*height:100%;*/
+	margin: 0px;
+	padding: 0px;
+	min-height: 100%;
 }
 
 body {
-	background-image:url("img/branschdagen_background.jpg");
-	background-size:cover;
-	background-repeat: no-repeat;
+	background-color: #2d2d2a;
 }
 
 #wrapper {
-	min-height:100%;
-	position:relative;
+	min-height: 100%;
+	position: relative;
+	background-image: url("img/branschdagen_background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 #header {
-	width:100%;
-	background-color:#2d2d2a;
-	height:80px;
+	width: 100%;
+	background-color: #2d2d2a;
+	height: 80px;
+	-webkit-box-shadow: 0px 3px 10px 0px rgba(50, 50, 50, 0.3);
+	-moz-box-shadow:    0px 3px 10px 0px rgba(50, 50, 50, 0.3);
+	box-shadow:         0px 3px 10px 0px rgba(50, 50, 50, 0.3);
 }
 
 #content {
 	width: 100%;
-	padding-bottom:100px;
+	padding-bottom: 100px;
 
 }
 
 .container {
-	display:inline-block;
-	width:60%;
-	margin-left:7.5%;
-	margin-right:4%;
-	margin-top:60px;
-	background-color:rgba(255,255,255,0.95);
-	min-height:500px;
+	display: inline-block;
+	width: 60%;
+	margin-left: 7.5%;
+	margin-right: 1%;
+	margin-top: 60px;
+	background-color: rgba(255,255,255,0.95);
+	min-height: 500px;
 }
 
 #feedContainer {
-	display:inline-block;
+	display: inline-block;
 	vertical-align: top;
-	margin-top:60px;
-	width:20%;
-	margin-right:7.5%;
-	background-color:rgba(255,255,255,0.15);
-	min-height:500px;
+	margin-top: 60px;
+	width: 20%;
+	margin-right: 7.5%;
+	background-color: rgba(255,255,255,0.15);
 }
 
-#footer {
-	background-color:#2d2d2a;
+/*-----------------------------------
+ 			TWITTER STUFF 
+-----------------------------------*/
+
+.tweet {
+	margin-top: 8px;
+	margin-bottom: 8px;
+	background-color: rgba(255,255,255,0.7);
+	min-height: 40px;
+	font-family: 'Open Sans', Sans-serif;
+	-webkit-box-shadow: 0px 3px 15px 0px rgba(50, 50, 50, 0.3);
+	-moz-box-shadow:    0px 3px 15px 0px rgba(50, 50, 50, 0.3);
+	box-shadow:         0px 3px 15px 0px rgba(50, 50, 50, 0.3);
+}
+
+.tweetHeader {
+	background-color: #55acee;
+	-webkit-box-shadow: 0px 3px 10px 0px rgba(50, 50, 50, 0.3);
+	-moz-box-shadow:    0px 3px 10px 0px rgba(50, 50, 50, 0.3);
+	box-shadow:         0px 3px 10px 0px rgba(50, 50, 50, 0.3);
+}
+
+.tweetProfilePicContainer {
+	display: inline-block;
+	box-sizing:border-box;
+	padding:10px;
+	width:30%;
+}
+
+.tweetProfilePic {
+	max-width:100%;
+	max-height:100%;
+	border-radius:100%;
+}
+
+.tweetUsername {
+	color:white;
+    display: inline-block;
+    font-family: 'Lato', Sans-Serif;
+    font-weight: bold;
+    font-size: 20px;
+    width: 65%;
+}
+
+.tweetText {
+	display:inline-block;
 	width:100%;
-	height:75px;
-	position:absolute;
-	bottom:0;
-	left:0;
+	box-sizing:border-box;
+	padding:15px;
+}
+
+/*-----------------------------------
+		   TWITTER STUFF END
+-----------------------------------*/
+
+#footer {
+	background-color: #2d2d2a;
+	width: 100%;
+	min-height:75px;
 }
 
 #bdLogo {
-	box-sizing:border-box;
-	padding-left:30px;
-	padding-top:15px;
-	padding-bottom:15px;
-	max-height:100%;
+	box-sizing: border-box;
+	padding-left: 30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	max-height: 100%;
 }
 
+
 #menuIcon {
-	float:right;
-	box-sizing:border-box;
-	padding:27px;
-	max-height:100%;
+	float: right;
+	box-sizing: border-box;
+	padding: 27px;
+	max-height: 100%;
+	cursor:pointer;
 }
 
 .headline {
-	background-color:rgba(45,45,42,0.9);
-	color:white;
-	font-family:lato;
-	font-size:18pt;
-	padding-bottom:5px;
-	padding-top:20px;
+	font-weight:bold;
+	background-color: rgba(45,45,42,0.9);
+	color: white;
+	font-family: 'Lato', Sans-Serif;
+	font-size: 18pt;
+	padding-bottom: 5px;
+	padding-top: 20px;
 	text-align: center;
 
 }
 
 .headline hr {
-	margin:0px;
-	margin-top:10px;
-	
+	margin: 0px;
+	margin-top: 10px;
 }
 
 #feedContainer .headline hr{
-	border:1.7px solid #2bb482;
+	border: 1.7px solid #2bb482;
 }
 
 .container .headline hr {
-	border:1.7px solid #328c96;
+	border: 1.7px solid #328c96;
 }
 
 #aboutText {
-	padding:20px;
-	padding-bottom:35px;
-	font-family:Lato, Open Sans, Sans-Serif;
-	color:#1c1c1c;
+	padding: 30px;
+	padding-bottom: 35px;
+	font-family: 'Open Sans', 'Lato', Sans-Serif;
+	color: #1c1c1c;
+	line-height: 20pt;
 }
 
 #aboutText a{
-	text-decoration:none;
-	font-weight:bold;
+	text-decoration: none;
+	font-weight: bold;
 	-webkit-transition: 0.35s;
 	transition: 0.35s;
-	color:#1c1c1c;
+	color: #1c1c1c;
 }
 
 #aboutText > a:hover{
 	-webkit-transition: 0.35s;
 	transition: 0.35s;
-	color:#ddd310;
+	color: #ddd310;
 }
 
 #menu {
-	overflow:hidden;
-	background-color:#2d2d2a;
-	color:white;
-	text-align:center;
+	overflow: hidden;
+	background-color: #2d2d2a;
+	color: white;
+	text-align: center;
+}
+
+#menu .active {
+	color: #328c96;
 }
 
 #menu.menuOpen{
 	-webkit-transition: 0.3s;
 	transition: 0.3s;
-	height:50px;
+	height: 50px;
 }
 
 #menu.menuClosed {
 	-webkit-transition: 0.3s;
 	transition: 0.3s;
-	height:0px;
+	height: 0px;
 }
 
 #menu a {
-	display:inline-block;
-	width:200px;
-	max-width:18%;
-	font-size:15pt;
-	font-family:Lato, "Open Sans", Sans-Serif;
+	display: inline-block;
+	width: 200px;
+	max-width: 18%;
+	font-size: 15pt;
+	font-family: 'Lato', "Open Sans", Sans-Serif;
 }
 
 #menu a{
 	text-decoration: none;
 	-webkit-transition: 0.35s;
 	transition: 0.35s;
-	color:white;
+	color: white;
 }
 
 #menu > a:hover{
 	-webkit-transition: 0.35s;
 	transition: 0.35s;
-	color:#ddd310;
+	color: #328c96;
 }
 
 .footerText {
   color: #ddd310;
   box-sizing: border-box;
   padding: 20px;
-  padding-left:30px;
-  font-size:10pt;
+  padding-left: 30px;
+  font-size: 10pt;
 }
 
 .footerText a {
-	color:#ddd310;
-	text-decoration:none;
+	color: #ddd310;
+	text-decoration: none;
 }
