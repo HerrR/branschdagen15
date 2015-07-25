@@ -1,4 +1,4 @@
-app.controller('AppCtrl', function ($scope, Model) {
+app.controller('AppCtrl', function ($scope, $route, Model) {
 	var activeMenu = false;
 	$scope.toggleMenu = function(){
 		if(activeMenu){
@@ -11,5 +11,14 @@ app.controller('AppCtrl', function ($scope, Model) {
 			$("#menu").addClass("menuOpen");
 			activeMenu = true;
 		}
+	}
+	$scope.$route = $route;
+
+	$scope.loadingTweets = function(){
+		return Model.loadingTweets();
+	}
+
+	$scope.tweets = function(){
+		return Model.getTweets();
 	}
 })

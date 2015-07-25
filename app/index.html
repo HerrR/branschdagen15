@@ -6,6 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
 		<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700|Raleway:200,400|Open+Sans:100,400,700|Lato:400' rel='stylesheet' type='text/css'>
+
 		<!-- <link rel="icon" type="image/x-icon" href="img/favicon.ico"/> -->
 		<!-- <link rel="icon" href="img/favicon.ico"/> -->
 		<!-- <link rel="icon" sizes="192x192" href="img/Logo-small.png"> -->
@@ -21,21 +22,21 @@
 	    <script src="js/modelService.js"></script>
 	    
 		<script src="js/appCtrl.js"></script>
-	    <script src="js/homeCtrl.js"></script>
+	    <script src="js/partialsControllers.js"></script>
 
 	</head>
 	<body ng-controller="AppCtrl">
 		<div id="wrapper">
 			<div id="header">
-				<img src="img/branschdagen_logo.png" id="bdLogo"/>
+				<a ng-href="#/"><img src="img/branschdagen_logo.png" id="bdLogo"/></a>
 				<img src="img/menu_icon.png" id="menuIcon" ng-click="toggleMenu()"/>
 			</div>
 			<div id="menu" class="menuClosed">
-				<a href="#/">Hem</a>
-				<a href="#/massan">Mässan</a>
-				<a href="#/sittning">Sittningen</a>
-				<a href="#/prislista">Prislista</a>
-				<a href="#/kontakt">Kontakt</a>
+				<a ng-class="{active: $route.current.activeTab == 'home'}" href="#/">Hem</a>
+				<a ng-class="{active: $route.current.activeTab == 'expo'}" href="#/massan">Mässan</a>
+				<a ng-class="{active: $route.current.activeTab == 'dinner'}" href="#/sittning">Sittningen</a>
+				<a ng-class="{active: $route.current.activeTab == 'prices'}" href="#/prislista">Prislista</a>
+				<a ng-class="{active: $route.current.activeTab == 'contact'}" href="#/kontakt">Kontakt</a>
 			</div>
 			<div id="content">
 				<div class="container" ng-view></div>
@@ -44,12 +45,26 @@
 						#Branschdag15
 						<hr/>
 					</div>
-
-					Här ska det vara ett flöde med allt folk skriver med #Branschdag15 på Twitter och instagram.
-
-					<!-- <a class="twitter-timeline" href="https://twitter.com/hashtag/Branschdag15" data-widget-id="616325330412924928">#Branschdag15 Tweets</a> -->
-					<!-- <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> -->
-
+					<div ng-show="loadingTweets()">
+						<img src="http://www.wittyfeed.com/assets/image/loading.gif"/>
+						 <br/>Laddar tweets... </div>
+					<div ng-show="!loadingTweets()">
+						<div ng-repeat="tweet in tweets() | limitTo:5">
+							<div class="tweet">
+								<div class="tweetHeader">
+									<div class="tweetProfilePicContainer">
+										<img ng-src="{{tweet.user.profile_image_url}}" class="tweetProfilePic"/>
+									</div>
+									<div class="tweetUsername">
+										{{ tweet.user.name }}
+									</div>
+								</div>
+								<div class="tweetText">
+									{{ tweet.text }}
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div id="footer">
