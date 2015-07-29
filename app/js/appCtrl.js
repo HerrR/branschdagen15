@@ -18,7 +18,20 @@ app.controller('AppCtrl', function ($scope, $route, Model) {
 		return Model.loadingTweets();
 	}
 
-	$scope.tweets = function(){
-		return Model.getTweets();
+	$scope.loadingInstagram = function(){
+		return Model.loadingInstagram();
 	}
+
+	// $scope.tweets = function(){
+	// 	return Model.getTweets();
+	// }
+
+	$scope.socialMedia = function(){
+		return Model.getSocialMedia();
+	}
+	// $scope.socialMedia = function(){
+	// 	var socialMediaContent = Model.getSocialMedia();
+	// 	var sortedSocialMedia = socialMediaContent.sort(function(a,b){return a[1]-b[1]});
+	// 	return sortedSocialMedia;
+	// }
 })
