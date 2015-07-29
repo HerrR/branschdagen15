@@ -45,25 +45,34 @@
 						#Branschdag15
 						<hr/>
 					</div>
+					<img src="http://www.wittyfeed.com/assets/image/loading.gif" ng-show="loadingSocialMedia()"/>
 					<div ng-show="loadingTweets()">
-						<img src="http://www.wittyfeed.com/assets/image/loading.gif"/>
-						 <br/>Laddar tweets... </div>
-					<div ng-show="!loadingTweets()">
-						<div ng-repeat="tweet in tweets() | limitTo:5">
+						Laddar tweets...
+					</div>
+					<div ng-show="loadingInstagram()">
+						Laddar instagram...
+					</div>
+					<div ng-repeat="post in socialMedia() | orderBy: created | limitTo:5">
+						<div ng-if="post.type == 'tweet' ">
 							<div class="tweet">
 								<div class="tweetHeader">
 									<div class="tweetProfilePicContainer">
-										<img ng-src="{{tweet.user.profile_image_url}}" class="tweetProfilePic"/>
+										<img ng-src="{{post.profilePic}}" class="tweetProfilePic"/>
 									</div>
 									<div class="tweetUsername">
-										{{ tweet.user.name }}
+										{{ post.name }}
 									</div>
 								</div>
 								<div class="tweetText">
-									{{ tweet.text }}
+									{{ post.text }}
 								</div>
 							</div>
 						</div>
+<!-- 						<div ng-if="post.type == 'instagram' ">
+							{{ post.type }}
+							<img ng-src="{{post.profilePic}}" ng-class="tweetProfilePic"/>
+							{{ post.text }}
+						</div> -->
 					</div>
 				</div>
 			</div>

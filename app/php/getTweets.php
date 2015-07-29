@@ -9,7 +9,7 @@
 	);
 
 	$url = 'https://api.twitter.com/1.1/search/tweets.json';
-	$getfield = '?q=#svtcosplay';
+	$getfield = '?q=#kth';
 
 	$requestMethod = 'GET';
 	$twitter = new TwitterAPIExchange($settings);
