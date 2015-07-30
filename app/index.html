@@ -7,9 +7,24 @@
 
 		<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700|Raleway:200,400|Open+Sans:100,400,700|Lato:400' rel='stylesheet' type='text/css'>
 
-		<!-- <link rel="icon" type="image/x-icon" href="img/favicon.ico"/> -->
-		<!-- <link rel="icon" href="img/favicon.ico"/> -->
-		<!-- <link rel="icon" sizes="192x192" href="img/Logo-small.png"> -->
+		<link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+		<link rel="manifest" href="img/favicon/manifest.json">
+
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
 
 		<link rel="stylesheet" type="text/css" href="style.css" />
 
@@ -33,8 +48,7 @@
 			</div>
 			<div id="menu" class="menuClosed">
 				<a ng-class="{active: $route.current.activeTab == 'home'}" href="#/">Hem</a>
-				<a ng-class="{active: $route.current.activeTab == 'expo'}" href="#/massan">Mässan</a>
-				<a ng-class="{active: $route.current.activeTab == 'dinner'}" href="#/sittning">Sittningen</a>
+				<a ng-class="{active: $route.current.activeTab == 'schedule'}" href="#/schema">Schema</a>
 				<a ng-class="{active: $route.current.activeTab == 'prices'}" href="#/prislista">Prislista</a>
 				<a ng-class="{active: $route.current.activeTab == 'contact'}" href="#/kontakt">Kontakt</a>
 			</div>
@@ -42,40 +56,73 @@
 				<div class="container" ng-view></div>
 				<div id="feedContainer">
 					<div class="headline">
-						#Branschdag15
+						Nyheter
 						<hr/>
 					</div>
-					<img src="http://www.wittyfeed.com/assets/image/loading.gif" ng-show="loadingSocialMedia()"/>
-					<div ng-show="loadingTweets()">
-						Laddar tweets...
+					<div class="arrowBox" ng-click="previousPage()">
+						<div class="previousPage">
+						</div>
 					</div>
-					<div ng-show="loadingInstagram()">
-						Laddar instagram...
-					</div>
-					<div ng-repeat="post in socialMedia() | orderBy: created | limitTo:5">
-						<div ng-if="post.type == 'tweet' ">
-							<div class="tweet">
-								<div class="tweetHeader">
-									<div class="tweetProfilePicContainer">
-										<img ng-src="{{post.profilePic}}" class="tweetProfilePic"/>
+					<div id="feedContent">
+						<img src="http://www.wittyfeed.com/assets/image/loading.gif" ng-show="loadingSocialMedia()"/>
+						<div ng-show="loadingTweets()">
+							Laddar tweets...
+						</div>
+						<div ng-show="loadingInstagram()">
+							Laddar instagram...
+						</div>
+
+						<div ng-repeat="post in socialMedia() | orderBy: 'created':true | startFrom:smPage*smPageSize" id="post_{{$index}}">
+							<div ng-if="post.type == 'tweet' ">
+								<div class="sm-post" id="tweet">
+									<div class="sm-header">
+										<div class="sm-profilePicContainer">
+											<img ng-src="{{post.profilePic}}" class="sm-profilePic"/>
+										</div>
+										<div class="sm-userInfoContainer">
+											<a href="{{ post.profileURL }}"><div class="sm-username">
+												{{ post.name }}
+											</div></a>
+											<div class="sm-via">
+												via Twitter
+											</div>
+										</div>
 									</div>
-									<div class="tweetUsername">
-										{{ post.name }}
+									<div class="sm-text">
+										{{ post.text }}
 									</div>
 								</div>
-								<div class="tweetText">
-									{{ post.text }}
+							</div>
+							<div ng-if="post.type == 'instagram' ">
+								<div class="sm-post" id="instagram">
+									<div class="sm-header">
+										<div class="sm-profilePicContainer">
+											<img ng-src="{{post.profilePic}}" class="sm-profilePic"/>
+										</div>
+										<div class="sm-userInfoContainer">
+											<a href="{{ post.profileURL }}"><div class="sm-username">
+												{{ post.name }}
+											</div></a>
+											<div class="sm-via">
+												via Instagram
+											</div>
+										</div>
+									</div>
+									<div class="sm-pictureContainer">
+										<img ng-src="{{ post.picture }}" class="sm-picture"/>
+									</div>
+									<div class="sm-text">
+										{{ post.text }}
+									</div>
 								</div>
 							</div>
 						</div>
-<!-- 						<div ng-if="post.type == 'instagram' ">
-							{{ post.type }}
-							<img ng-src="{{post.profilePic}}" ng-class="tweetProfilePic"/>
-							{{ post.text }}
-						</div> -->
+					</div>
+					<div class="arrowBox bottom" ng-click="nextPage()">
+						<div class="nextPage">
+						</div>
 					</div>
 				</div>
-			</div>
 			<div id="footer">
 				<div class="footerText">Sektionen för Medieteknik, KTH<br/>
 				<a href="http://www.medieteknik.com" target="_blank">www.medieteknik.com</a></div>

@@ -7,15 +7,10 @@ app.config(['$routeProvider',
         controller: 'HomeCtrl',
         activeTab: 'home'
       }).
-      when('/massan',{
-        templateUrl: 'partials/expo.html',
-        controller: 'ExpoCtrl',
-        activeTab: 'expo'
-      }).
-      when('/sittning', {
-        templateUrl: 'partials/dinner.html',
-        controller: 'DinnerCtrl',
-        activeTab: 'dinner'
+      when('/schema',{
+        templateUrl: 'partials/schedule.html',
+        controller: 'ScheduleCtrl',
+        activeTab: 'schedule'
       }). 
       when('/prislista', {
         templateUrl: 'partials/prices.html',
