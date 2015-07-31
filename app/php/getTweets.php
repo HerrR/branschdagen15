@@ -1,15 +1,16 @@
 <?php
 	require_once('TwitterAPIExchange.php');
+	require_once('config.php');
 
 	$settings = array(
-	    'oauth_access_token' => "616422343-Ij0yKve2M2ZWW7RqdMDorcSuNFCG1gYcvpAH9D9E",
-	    'oauth_access_token_secret' => "7jfGFZa6Wgqb8J1EPUOazeRJbQrerYs92GasXpuxSIeJF",
-	    'consumer_key' => "BvN5PsvnqjGgI2Skgu4rcZput",
-	    'consumer_secret' => "yAd7DMVixldCPrkiXOTz4j9f5cpZJYbc7dA8XDhgofG4ti9pCq"
+	    'oauth_access_token' => $oauth_access_token,
+	    'oauth_access_token_secret' => $oauth_access_token_secret,
+	    'consumer_key' => $consumer_key,
+	    'consumer_secret' => $consumer_secret
 	);
 
 	$url = 'https://api.twitter.com/1.1/search/tweets.json';
-	$getfield = '?q=#kth';
+	$getfield = '?q=#Branschdag15+OR+#Medieteknik+OR+from:SirBergeling+OR+from:Branschdag';
 
 	$requestMethod = 'GET';
 	$twitter = new TwitterAPIExchange($settings);
