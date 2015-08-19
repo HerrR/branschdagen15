@@ -22,6 +22,10 @@ app.config(['$routeProvider',
         controller: 'ContactCtrl',
         activeTab: 'contact'
       }).
+      when('/foretag/:companyName',{
+        templateUrl: 'partials/company.html',
+        controller: 'CompanyCtrl'
+      }).
       otherwise({
         redirectTo: '/'
       });

@@ -73,6 +73,7 @@ body {
 	-webkit-box-shadow: 0px 3px 10px 0px rgba(50, 50, 50, 0.3);
 	-moz-box-shadow:    0px 3px 10px 0px rgba(50, 50, 50, 0.3);
 	box-shadow:         0px 3px 10px 0px rgba(50, 50, 50, 0.3);
+	min-height:68px;
 }
 
 .sm-profilePicContainer {
@@ -237,6 +238,10 @@ body {
 	border: 1.7px solid #328c96;
 }
 
+#partners .headline hr{
+	border: 1.7px solid #ddd310;
+}
+
 #aboutText {
 	padding: 30px;
 	padding-bottom: 35px;
@@ -301,8 +306,36 @@ body {
 #menu > a:hover{
 	-webkit-transition: 0.35s;
 	transition: 0.35s;
-	color:#ddd310; /* Yellow */
-	/*color: #328c96;*/ /* Blue */
+	color:#ddd310; 
+}
+
+#socialMediaContainer {
+	width:90%;
+	display:none;
+	min-height:120px;
+	background-color: rgba(255,255,255,0.95);
+	margin:20px 5% 0px 5%;
+}
+
+#socialMediaContainer .headline hr{
+	border: 1.7px solid #2bb482;
+}
+
+.smIcon {
+	width:20%;
+	display:inline-block;
+	margin:0px 14% 10% 15%;
+}
+.smIcon img{
+	max-width:100%;
+}
+
+#newsInfo {
+	padding: 30px;
+	padding-bottom: 35px;
+	font-family: 'Open Sans', 'Lato', Sans-Serif;
+	color: #1c1c1c;
+	line-height: 20pt;
 }
 
 .footerText {
@@ -316,4 +349,198 @@ body {
 .footerText a {
 	color: #ddd310;
 	text-decoration: none;
+}
+
+#partners {
+	width:81.3%;
+	display:inline-block;
+	margin: 30px 7.5% 0px 7.5%;
+	background-color: rgba(255,255,255,0.95);
+}
+
+.gold {
+	box-sizing:border-box;
+	padding:30px;
+	text-align:center;
+}
+
+.silver {
+	box-sizing:border-box;
+	padding:30px;
+	text-align:center;
+}
+
+.partnerCategory {
+	font-family:'Raleway', Sans-Serif;
+	text-align:center;
+	font-weight:800;
+	font-size:24pt;
+	margin-bottom:30px;
+}
+
+.gold .partnerCategory {
+	color:#ddd310;
+}
+
+.silver .partnerCategory{
+	color:#9e9e9e;
+}
+
+.partner {
+	display: inline-block;
+	text-align: center;
+	margin:0px 1% 0px 1%;
+}
+
+.partner img {
+	max-width:100%;
+}
+
+.gold .partner {
+	width:30%;
+}
+
+.silver .partner {
+	width:20%;
+}
+
+#companyInfo {
+	padding: 30px;
+	padding-bottom: 35px;
+	font-family: 'Open Sans', 'Lato', Sans-Serif;
+	color: #1c1c1c;
+	line-height: 20pt;
+	text-align:center;
+}
+
+#companyInfo a{
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-transition: 0.35s;
+	transition: 0.35s;
+	color: #1c1c1c;
+}
+
+#companyInfo > a:hover{
+	-webkit-transition: 0.35s;
+	transition: 0.35s;
+	color: #ddd310;
+}
+
+#companyInfo img{
+	max-width:150px;
+}
+
+#basicInfo {
+	display:inline-block;
+	width:30%;
+	text-align:left;
+}
+
+#companyDescription {
+	display:inline-block;
+	vertical-align: top;
+	width:65%;
+	text-align:left;
+}
+
+.companyLogoContainer{
+	width:100%;
+	text-align:center;
+	margin-bottom:10px;
+}
+
+@media (max-width: 980px){
+	.container {
+		width: 65%;
+		margin: 60px 1% 0px 3.5%;
+	}
+
+	#feedContainer{
+		margin: 60px 0px 0px 0px;
+		width: 28%;
+	}
+
+	#partners {
+		width:94.5%;
+		margin: 20px 3% 0px 3.5%;
+	}
+
+	#companyDescription {
+		width:50%;
+	}
+
+	#companyInfo{
+	    padding: 30px 15px 35px 15px;
+	}
+
+	#basicInfo {
+		width:100%;
+		margin-bottom:20px;
+	}
+
+	#companyDescription {
+		width:100%;
+	}
+}
+
+@media (max-width: 600px){
+	.container {
+		width:90%;
+		margin:40px 0px 0px 5%;
+	}
+
+	#bdLogo {
+		padding:20px 0px 20px 30px;
+	}
+
+	#feedContainer {
+		display:none;
+	}
+
+	#menu a{
+		width:100%;
+		padding:5px 30px 5px 30px;
+		text-align:right;
+		max-width:initial;
+		box-sizing:border-box;
+	}
+	#menu.menuOpen{
+		height:150px;
+	}
+
+	.footerText{
+		text-align:center;
+	}
+
+	#menu > a:hover{
+		color: white; 
+		background-color:#ddd310;
+	}
+
+	#socialMediaContainer {
+		display:inline-block;
+	}
+
+	#partners {
+		width:90%;
+		margin: 20px 5% 0px 5%;
+	}
+/*
+	#basicInfo {
+		width:100%;
+		margin-bottom:20px;
+	}
+
+	#companyDescription {
+		width:100%;
+	}*/
+
+}
+
+
+@media (max-width: 400px){
+	#bdLogo {
+		padding:26px 0px 26px 15px;
+	}
 }
