@@ -1,0 +1,17 @@
+<div class="headline">
+	{{ companyName }}
+	<hr/>
+</div>
+<div id="companyInfo">
+	<div id="basicInfo">
+		<div class="companyLogoContainer">
+			<img ng-src="{{ companyInfo().logo }}"/><br/>
+		</div>
+		<b>Monterplats:</b> {{ companyInfo().placeInExpo}} <br/>
+		<b>Typ av partner:</b> {{ companyInfo().type }} <br/>
+		<a target="_blank" href="{{ companyInfo().website }}">Hemsida</a> <br/>
+	</div>
+	<div id="companyDescription">
+		{{ companyInfo().description }}
+	</div>
+</div>

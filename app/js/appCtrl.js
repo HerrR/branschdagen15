@@ -51,8 +51,11 @@ app.controller('AppCtrl', function ($scope, $route, Model) {
 	}
 
 	$scope.partners = function(){
-		console.log(Model.getPartners().partners);
 		return Model.getPartners().partners;
+	}
+
+	$scope.companyInfoScroll = function(){
+		$('html, body').animate({scrollTop: $(".container").position().top}, 200);
 	}
 })
 

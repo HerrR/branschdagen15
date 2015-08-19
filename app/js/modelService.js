@@ -4,15 +4,7 @@ app.factory('Model', function ($http) {
 	var tweets = [];
 	var instaPosts = [];
 	var socialMediaPosts = [];
-	var partners = {"partners":[
-	{"name":"Spotify", "logo":"img/companyLogos/dummyLogo.png", "website":"www.bergeling.com", "placeInExpo":"A1", "type":"Gold", "description":"Lorem ipsum descriptium"},
-	{"name":"Adlibris", "logo":"img/companyLogos/dummyLogo.png", "website":"www.bergeling.com", "placeInExpo":"A2", "type":"Silver", "description":"Lorem ipsum descriptium"},
-	{"name":"Kapero", "logo":"img/companyLogos/dummyLogo.png", "website":"www.bergeling.com", "placeInExpo":"A3", "type":"Gold", "description":"Lorem ipsum descriptium"},
-	{"name":"Studybuddy", "logo":"img/companyLogos/dummyLogo.png", "website":"www.bergeling.com", "placeInExpo":"A4", "type":"Silver", "description":"Lorem ipsum descriptium"},
-	{"name":"Adlibris", "logo":"img/companyLogos/dummyLogo.png", "website":"www.bergeling.com", "placeInExpo":"A2", "type":"Silver", "description":"Lorem ipsum descriptium"},
-	{"name":"Netlight", "logo":"img/companyLogos/dummyLogo.png", "website":"www.bergeling.com", "placeInExpo":"A3", "type":"Gold", "description":"Lorem ipsum descriptium"},
-	{"name":"Studybuddy", "logo":"img/companyLogos/dummyLogo.png", "website":"www.bergeling.com", "placeInExpo":"A4", "type":"Silver", "description":"Lorem ipsum descriptium"},
-	]}
+
 
 	$http.get("php/getTweets.php")
 	.success(
@@ -83,6 +75,24 @@ app.factory('Model', function ($http) {
   		return partners;
   	}
 
+  	this.getPartner = function(partnerName){
+  		for(partner in partners.partners){
+  			if(partners.partners[partner].name == partnerName){
+  				return partners.partners[partner];
+  			}
+  		}
+  		console.log("returning false");
+  		return false;
+  	}
 
+	var partners = {"partners":[
+	{"name":"Spotify", "logo":"img/companyLogos/SpotifyLogo.png", "website":"https://www.spotify.com/se/", "placeInExpo":"A1", "type":"Guld", "description":"Spotify är ett svenskt multinationellt företag med en online-musiktjänst som erbjuder möjligheten att kunna lyssna till strömmad musik över Internet. Tjänsten är en av världens största i sitt slag, med sina 40 miljoner användare världen över, varav 10 miljoner är betalande abonnemangskunder (maj 2014). \n Spotify startades i april 2006 av entreprenörerna Daniel Ek och TradeDoubler-grundaren Martin Lorentzon. Koncernen har moderbolag i Luxemburg men även kontor i Stockholm, Göteborg och Borås under det svenska bolaget Spotify AB. Bolaget ska, enligt rykten, ha tagit in 15,3 miljoner euro i venturekapital från de svenska IT-teknikinvestmentbolagen Creandum och Northzone Ventures."},
+	{"name":"Adlibris", "logo":"img/companyLogos/dummyLogo.png", "website":"http://bergeling.com", "placeInExpo":"A2", "type":"Silver", "description":"Lorem ipsum descriptium"},
+	{"name":"Kapero", "logo":"img/companyLogos/dummyLogo.png", "website":"http://bergeling.com", "placeInExpo":"A3", "type":"Guld", "description":"Lorem ipsum descriptium"},
+	{"name":"Studybuddy", "logo":"img/companyLogos/dummyLogo.png", "website":"http://bergeling.com", "placeInExpo":"A4", "type":"Silver", "description":"Lorem ipsum descriptium"},
+	{"name":"Adlibris", "logo":"img/companyLogos/dummyLogo.png", "website":"http://bergeling.com", "placeInExpo":"A5", "type":"Silver", "description":"Lorem ipsum descriptium"},
+	{"name":"Netlight", "logo":"img/companyLogos/dummyLogo.png", "website":"http://bergeling.com", "placeInExpo":"A6", "type":"Guld", "description":"Lorem ipsum descriptium"},
+	{"name":"Studybuddy", "logo":"img/companyLogos/dummyLogo.png", "website":"http://bergeling.com", "placeInExpo":"A7", "type":"Silver", "description":"Lorem ipsum descriptium"},
+	]};
 	return this;
 });

@@ -149,18 +149,22 @@
 						<div class="partnerCategory">
 							Guldpartners
 						</div>
-						<div class="partner" ng-repeat="partner in partners() | filter:type='Gold'">
-							<div class="partnerName">{{ partner.name }}</div>
-							<img ng-src="{{ partner.logo }}"/>
+						<div class="partner" ng-repeat="partner in partners() | filter:type='Guld'" ng-click="companyInfoScroll()">
+							<a ng-href="#/foretag/{{partner.name}}">
+								<img ng-src="{{ partner.logo }}"/>
+								<div class="partnerName">{{ partner.name }}</div>
+							</a>
 						</div>
 					</div>
 					<div class="silver">
 						<div class="partnerCategory">
 							Silverpartners
 						</div>
-						<div class="partner" ng-repeat="partner in partners() | filter:type='Silver'">
-							<div class="partnerName">{{ partner.name }}</div>
-							<img ng-src="{{ partner.logo }}"/>
+						<div class="partner" ng-repeat="partner in partners() | filter:type='Silver'" ng-click="companyInfoScroll()">
+							<a ng-href="#/foretag/{{ partner.name }}">
+								<img ng-src="{{ partner.logo }}"/>
+								<div class="partnerName">{{ partner.name }}</div>
+							</a>
 						</div>
 					</div>
 				</div>

@@ -404,6 +404,52 @@ body {
 	width:20%;
 }
 
+#companyInfo {
+	padding: 30px;
+	padding-bottom: 35px;
+	font-family: 'Open Sans', 'Lato', Sans-Serif;
+	color: #1c1c1c;
+	line-height: 20pt;
+	text-align:center;
+}
+
+#companyInfo a{
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-transition: 0.35s;
+	transition: 0.35s;
+	color: #1c1c1c;
+}
+
+#companyInfo > a:hover{
+	-webkit-transition: 0.35s;
+	transition: 0.35s;
+	color: #ddd310;
+}
+
+#companyInfo img{
+	max-width:150px;
+}
+
+#basicInfo {
+	display:inline-block;
+	width:30%;
+	text-align:left;
+}
+
+#companyDescription {
+	display:inline-block;
+	vertical-align: top;
+	width:65%;
+	text-align:left;
+}
+
+.companyLogoContainer{
+	width:100%;
+	text-align:center;
+	margin-bottom:10px;
+}
+
 @media (max-width: 980px){
 	.container {
 		width: 65%;
@@ -418,6 +464,23 @@ body {
 	#partners {
 		width:94.5%;
 		margin: 20px 3% 0px 3.5%;
+	}
+
+	#companyDescription {
+		width:50%;
+	}
+
+	#companyInfo{
+	    padding: 30px 15px 35px 15px;
+	}
+
+	#basicInfo {
+		width:100%;
+		margin-bottom:20px;
+	}
+
+	#companyDescription {
+		width:100%;
 	}
 }
 
@@ -463,6 +526,15 @@ body {
 		width:90%;
 		margin: 20px 5% 0px 5%;
 	}
+/*
+	#basicInfo {
+		width:100%;
+		margin-bottom:20px;
+	}
+
+	#companyDescription {
+		width:100%;
+	}*/
 
 }
 
