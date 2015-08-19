@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-		<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700|Raleway:200,400|Open+Sans:100,400,700|Lato:400' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700|Raleway:200,400|Open+Sans:100,400,700|Lato:400,800' rel='stylesheet' type='text/css'>
 
 		<link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
@@ -120,6 +120,47 @@
 					</div>
 					<div class="arrowBox bottom" ng-click="nextPage()">
 						<div class="nextPage">
+						</div>
+					</div>
+				</div>
+				<div id="socialMediaContainer">
+					<div class="headline">
+						Nyheter
+						<hr/>
+					</div>
+					<div id="newsInfo">
+						I sann medieteknik-anda så lägger vi självklart upp de senaste nyheterna i våra sociala medier. Följ oss på Twitter och Instagram för att hålla dig uppdaterad.
+					</div>
+					<div id="socialMediaButtons">
+						<div class="smIcon">
+							<a href="https://twitter.com/branschdag" target="_blank"><img src="img/twitterIcon.png"/></a>
+						</div>
+						<div class="smIcon">
+							<a href="https://instagram.com/branschdag/" target="_blank"><img src="img/instagramIcon.png"/></a>
+						</div>
+					</div>
+				</div>
+				<div id="partners">
+					<div class="headline">
+						Samarbetspartners
+						<hr/>
+					</div>
+					<div class="gold">
+						<div class="partnerCategory">
+							Guldpartners
+						</div>
+						<div class="partner" ng-repeat="partner in partners() | filter:type='Gold'">
+							<div class="partnerName">{{ partner.name }}</div>
+							<img ng-src="{{ partner.logo }}"/>
+						</div>
+					</div>
+					<div class="silver">
+						<div class="partnerCategory">
+							Silverpartners
+						</div>
+						<div class="partner" ng-repeat="partner in partners() | filter:type='Silver'">
+							<div class="partnerName">{{ partner.name }}</div>
+							<img ng-src="{{ partner.logo }}"/>
 						</div>
 					</div>
 				</div>

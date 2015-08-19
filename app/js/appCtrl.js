@@ -30,6 +30,7 @@ app.controller('AppCtrl', function ($scope, $route, Model) {
 			activeMenu = true;
 		}
 	}
+
 	$scope.$route = $route;
 
 	$scope.loadingTweets = function(){
@@ -47,6 +48,11 @@ app.controller('AppCtrl', function ($scope, $route, Model) {
 	$scope.socialMedia = function(){
 		adjustFeedContainer();
 		return Model.getSocialMedia();
+	}
+
+	$scope.partners = function(){
+		console.log(Model.getPartners().partners);
+		return Model.getPartners().partners;
 	}
 })
 
