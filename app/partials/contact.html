@@ -3,5 +3,11 @@
 	<hr/>
 </div>
 <div id="aboutText">
-	Här ska man kunna ta kontakt
+	<div ng-repeat="member in branschdagsgruppen()" class="contactProfile">
+		<img ng-src="{{ member.picture }}"/> 
+		<div style="font-weight:bold;">{{ member.name }}</div>
+		<div style="color:#ddd310;">{{ member.role }}</div>
+		<a href="mailto:{{ member.email }}"><div style="font-weight:normal;">{{ member.email }}</div></a>
+		<a href="callto:{{ member.phone }}"><div style="font-weight:normal;">{{ member.phone }}</div></a>
+	</div>
 </div>

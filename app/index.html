@@ -65,13 +65,14 @@
 						</div>
 					</div>
 					<div id="feedContent">
-						<img src="http://www.wittyfeed.com/assets/image/loading.gif" ng-show="loadingSocialMedia()"/>
+						<img src="img/Media Loading.gif" ng-show="loadingSocialMedia()" class="loadingIcon"/>
+<!-- 
 						<div ng-show="loadingTweets()">
 							Laddar tweets...
 						</div>
 						<div ng-show="loadingInstagram()">
 							Laddar instagram...
-						</div>
+						</div> -->
 
 						<div ng-repeat="post in socialMedia() | orderBy: 'created':true | startFrom:smPage*smPageSize" id="post_{{$index}}">
 							<div ng-if="post.type == 'tweet' ">
@@ -153,7 +154,7 @@
 						<div class="partner" ng-repeat="partner in partners() | filter:type='Guld'" ng-click="companyInfoScroll()">
 							<a ng-href="#/foretag/{{partner.name}}">
 								<img ng-src="{{ partner.logo }}"/>
-								<div class="partnerName">{{ partner.name }}</div>
+								<!-- <div class="partnerName">{{ partner.name }}</div> -->
 							</a>
 						</div>
 					</div>
@@ -164,7 +165,7 @@
 						<div class="partner" ng-repeat="partner in partners() | filter:type='Silver'" ng-click="companyInfoScroll()">
 							<a ng-href="#/foretag/{{ partner.name }}">
 								<img ng-src="{{ partner.logo }}"/>
-								<div class="partnerName">{{ partner.name }}</div>
+								<!-- <div class="partnerName">{{ partner.name }}</div> -->
 							</a>
 						</div>
 					</div>
