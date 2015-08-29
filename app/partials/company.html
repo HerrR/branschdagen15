@@ -2,14 +2,15 @@
 	{{ companyName }}
 	<hr/>
 </div>
-<div id="companyInfo">
+<img src="img/Media Loading.gif" ng-show="loadingPartners()" class="contentLoadingIndicator"/>
+<div id="companyInfo" ng-hide="loadingPartners()">
 	<div id="basicInfo">
 		<div class="companyLogoContainer">
-			<img ng-src="{{ companyInfo().logo }}"/><br/>
+			<a href="{{ companyInfo().website }}" target="_blank"><img ng-src="img/companyLogos/{{ companyInfo().logo }}"/></a><br/>
 		</div>
-		<b>Monterplats:</b> {{ companyInfo().placeInExpo}} <br/>
-		<b>Typ av partner:</b> {{ companyInfo().type }} <br/>
-		<a target="_blank" href="{{ companyInfo().website }}">Hemsida</a> <br/>
+		Monterplats: <b>{{ companyInfo().placeInExpo}}</b> <br/>
+		Typ av partner: <b>{{ companyInfo().type }}</b> <br/>
+		<!-- <a target="_blank" href="{{ companyInfo().website }}">Hemsida</a> <br/> -->
 	</div>
 	<div id="companyDescription">
 		{{ companyInfo().description }}
