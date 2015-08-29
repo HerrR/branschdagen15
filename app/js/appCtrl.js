@@ -33,11 +33,6 @@ app.controller('AppCtrl', function ($scope, $route, Model) {
 
 	$scope.$route = $route;
 
-	// $scope.$on('$routeChangeSuccess', function(){
-	// 	console.log("CALLED!");
-	// }
-
-
 
 	$scope.loadingTweets = function(){
 		return Model.loadingTweets();
