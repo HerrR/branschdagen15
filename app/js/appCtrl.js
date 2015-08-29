@@ -52,10 +52,19 @@ app.controller('AppCtrl', function ($scope, $route, Model) {
 	}
 
 	$scope.partners = function(){
-		return Model.getPartners().partners;
+		return Model.getPartners();
+	}
+
+	$scope.loadingPartners = function(){
+		if(Model.getPartners() === undefined){
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	$scope.companyInfoScroll = function(){
+		adjustFeedContainer();
 		$('html, body').animate({scrollTop: $(".container").position().top}, 200);
 	}
 })

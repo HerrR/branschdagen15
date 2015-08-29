@@ -460,6 +460,7 @@ body {
 	vertical-align: top;
 	width:65%;
 	text-align:left;
+	white-space: pre-line;
 }
 
 .companyLogoContainer{
@@ -485,6 +486,12 @@ body {
 	-webkit-box-shadow: 0px 3px 10px 0px rgba(50, 50, 50, 0.3);
 	-moz-box-shadow:    0px 3px 10px 0px rgba(50, 50, 50, 0.3);
 	box-shadow:         0px 3px 10px 0px rgba(50, 50, 50, 0.3);
+}
+
+.contentLoadingIndicator {
+    display: block;
+    width: 30%;
+    margin: 75px auto;
 }
 
 .offer {
@@ -535,6 +542,31 @@ body {
 .offerContent ul {
 	margin-bottom:40px;
 }
+.event {
+	margin-bottom:15px;
+	box-sizing:border-box;
+	padding:20px;
+	-webkit-box-shadow: 0px 3px 10px 0px rgba(50, 50, 50, 0.3);
+	-moz-box-shadow:    0px 3px 10px 0px rgba(50, 50, 50, 0.3);
+	box-shadow:         0px 3px 10px 0px rgba(50, 50, 50, 0.3);
+}
+.eventTimes {
+	display:inline-block;
+	width:120px;
+	vertical-align: top;
+}
+
+.eventName {
+	/*display:inline-block;*/
+	font-weight:bold;
+	font-size:14pt;
+	font-family: 'Lato', Sans-Serif;
+}
+
+.eventText {
+	display:inline-block;
+	max-width:calc(100% - 130px);
+}
 
 @media (max-width: 1024px){
 
@@ -575,9 +607,26 @@ body {
 }
 
 @media (max-width: 725px){
+
+	.eventTimes {
+		width:100%;
+		text-align:center;
+	}
+
+	.eventText {
+		text-align:center;
+		width:100%;
+		max-width:initial;
+	}
 	.container {
 		width:90%;
 		margin:40px 0px 0px 5%;
+	}
+
+	.contentLoadingIndicator{
+		display: block;
+    	width: 50%;
+    	margin: 65px auto;
 	}
 
 	#bdLogo {
@@ -598,10 +647,6 @@ body {
 	#menu.menuOpen{
 		height:150px;
 	}
-
-/*	.footerText{
-		text-align:center;
-	}*/
 
 	#menu > a:hover{
 		color: white; 

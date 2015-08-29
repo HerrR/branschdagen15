@@ -3,9 +3,24 @@
 	<hr/>
 </div>
 <div id="aboutText">
-	Mässan kommer att öppna vid 10:00 och fortgå fram till 16:00. Under denna tid kommer företagen att stå i Nymble och prata med studenter, mestadels från programmet för Medieteknik men det är självklart öppet även för andra sektioner att komma dit. Tanken med mässan är att företag och studenter ska kunna knyta kontakt. Som företag är det viktigt att marknadsföra sig för morgondagens arbetskår och som student är det viktigt att se vilka framtida möjligheter som finns, knyta kontakter och öva på att nätverka. <br/><br/>
+	<div ng-repeat="event in schedule()" class="event">
+		<div class="eventTimes">
+			{{ event.start | date : 'HH:mm' }} <span ng-hide="event.end === null">- {{ event.end | date : 'HH:mm' }}</span>
+		</div>
+		<div class="eventText">
+			<div class="eventName">
+				{{ event.name }}
+			</div>
+			<div class="eventDescription">
+				{{ event.description}}
+			</div>
+		</div>
+		<!-- <hr ng-show="!$last"/> -->
+	</div>
+
+<!-- 	Mässan kommer att öppna vid 10:00 och fortgå fram till 16:00. Under denna tid kommer företagen att stå i Nymble och prata med studenter, mestadels från programmet för Medieteknik men det är självklart öppet även för andra sektioner att komma dit. Tanken med mässan är att företag och studenter ska kunna knyta kontakt. Som företag är det viktigt att marknadsföra sig för morgondagens arbetskår och som student är det viktigt att se vilka framtida möjligheter som finns, knyta kontakter och öva på att nätverka. <br/><br/>
 
 	Vi hoppas att alla som lämnar mässan ska känna att de fått ut någonting av dagen, om det så är en ny kontakt, bättre insikt i branschen, framtidshopp eller en näve lösgodis! <br/><br/>
 
-	På kvällen kommer det anordnas en sittning för både företag och studenter. Tanken här är att man ska kunna mötas under mer avslappnade former och avnjuta en trevlig middag i gott sällskap. Middagen kommer att hållas i Nymbles lokal stora gasque, och även om det är en finmiddag så kommer studentikosa inslag att förekomma! <br/><br/>
+	På kvällen kommer det anordnas en sittning för både företag och studenter. Tanken här är att man ska kunna mötas under mer avslappnade former och avnjuta en trevlig middag i gott sällskap. Middagen kommer att hållas i Nymbles lokal stora gasque, och även om det är en finmiddag så kommer studentikosa inslag att förekomma! <br/><br/> -->
 </div>

@@ -142,7 +142,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="partners">
+				<div id="partners" ng-hide="loadingPartners()">
 					<div class="headline">
 						Samarbetspartners
 						<hr/>
@@ -153,7 +153,7 @@
 						</div>
 						<div class="partner" ng-repeat="partner in partners() | filter:type='Guld'" ng-click="companyInfoScroll()">
 							<a ng-href="#/foretag/{{partner.name}}">
-								<img ng-src="{{ partner.logo }}"/>
+								<img ng-src="img/companyLogos/{{ partner.logo }}"/>
 								<!-- <div class="partnerName">{{ partner.name }}</div> -->
 							</a>
 						</div>
@@ -164,7 +164,7 @@
 						</div>
 						<div class="partner" ng-repeat="partner in partners() | filter:type='Silver'" ng-click="companyInfoScroll()">
 							<a ng-href="#/foretag/{{ partner.name }}">
-								<img ng-src="{{ partner.logo }}"/>
+								<img ng-src="img/companyLogos/{{ partner.logo }}"/>
 								<!-- <div class="partnerName">{{ partner.name }}</div> -->
 							</a>
 						</div>
