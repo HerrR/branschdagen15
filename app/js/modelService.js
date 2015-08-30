@@ -1,6 +1,8 @@
 app.factory('Model', function ($http) {
 	var loadingTweets = true;
 	var loadingInstagram = true;
+	var sendingEmail = false;
+	var emailSent = false;
 	var tweets = [];
 	var instaPosts = [];
 	var socialMediaPosts = [];
@@ -116,6 +118,32 @@ app.factory('Model', function ($http) {
 
   	this.getBDgruppen = function(){
   		return branschdagsgruppen;
+  	}
+
+  	this.contactMe = function(contactInfo){
+  		sendingEmail = true;
+  		// console.log(contactInfo);
+  		console.log("Sending email...");
+
+	    var req = {
+	      	url: "php/contactMe.php",
+	      	method: "GET",
+	      	params: {contactInfo:contactInfo}
+	    }
+
+	    $http(req).success(function(data){
+	    	console.log("Email sent successfully!");
+	    	sendingEmail = false;
+	    	emailSent = true;
+	    })
+  	}
+
+  	this.sendingEmail = function(){
+  		return sendingEmail;
+  	}
+
+  	this.emailSent = function(){
+  		return emailSent;
   	}
 
 	return this;

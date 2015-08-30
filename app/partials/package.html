@@ -1,0 +1,20 @@
+<div class="headline">
+	{{ packageType | capitalize }}
+	<hr/>
+</div>
+<div id="aboutText">
+	<div ng-hide="emailSent()">
+		Fyll i dina kontaktuppgifter nedan så kontaktar vi dig med mer information!
+		<div class="center">
+			<input class="contactInput" type="text" id="name" ng-model="contactInfo.name" placeholder="Namn"/>
+			<input class="contactInput" type="text" id="email" ng-model="contactInfo.email" placeholder="E-post"/>
+			<input class="contactInput" type="text" id="company" ng-model="contactInfo.company" placeholder="Företag"/>
+			<div class="contactButton" ng-click="contactMe()" ng-class="{ loadingDisabled : sendingEmail() || !completeInfo()}" ng-hide="emailSent()">Kontakta mig med mer information</div>
+		</div>
+	</div>
+	<div ng-show="emailSent()" class="center">
+		Vi har tagit emot din kontaktinformation och kommer att kontakta dig inom kort! <br/>
+		<a ng-href="#/home">Tillbaka till förstasidan.</a>
+	</div>
+
+</div>

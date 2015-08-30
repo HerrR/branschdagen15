@@ -26,6 +26,11 @@ app.config(['$routeProvider',
         templateUrl: 'partials/company.html',
         controller: 'CompanyCtrl'
       }).
+      when('/prislista/:packageType', {
+        templateUrl: 'partials/package.html',
+        controller: 'PackageCtrl',
+        activeTab: 'prices'
+      }).
       otherwise({
         redirectTo: '/'
       });
