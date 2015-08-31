@@ -7,7 +7,9 @@ app.factory('Model', function ($http) {
 	var instaPosts = [];
 	var socialMediaPosts = [];
 	var branschdagsgruppen;
-	var partners;
+	// ****************** Disabled for first release *****************
+	// var partners;
+	// ***************************************************************
 	var events;
 
 
@@ -57,11 +59,13 @@ app.factory('Model', function ($http) {
 			branschdagsgruppen = data;
 		});
 
-	$http.get("php/getPartners.php")
-	.success(
-		function(data){
-			partners = data;
-		});
+	// ****************** Disabled for first release *****************
+	// $http.get("php/getPartners.php")
+	// .success(
+	// 	function(data){
+	// 		partners = data;
+	// 	});
+	// ***************************************************************
 
 	this.getEvents = function(){
 	    $http.get("php/getEvents.php").success(function(data){
@@ -103,18 +107,20 @@ app.factory('Model', function ($http) {
   		return socialMediaPosts;
   	}
 
-  	this.getPartners = function(){
-  		return partners;
-  	}
+	// ****************** Disabled for first release *****************
+  	// this.getPartners = function(){
+  	// 	return partners;
+  	// }
 
-  	this.getPartner = function(partnerName){
-  		for(partner in partners){
-  			if(partners[partner].name == partnerName){
-  				return partners[partner];
-  			}
-  		}
-  		return false;
-  	}
+  	// this.getPartner = function(partnerName){
+  	// 	for(partner in partners){
+  	// 		if(partners[partner].name == partnerName){
+  	// 			return partners[partner];
+  	// 		}
+  	// 	}
+  	// 	return false;
+  	// }
+	// ***************************************************************
 
   	this.getBDgruppen = function(){
   		return branschdagsgruppen;

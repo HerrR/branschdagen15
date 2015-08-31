@@ -51,17 +51,19 @@ app.controller('AppCtrl', function ($scope, $route, Model) {
 		return Model.getSocialMedia();
 	}
 
-	$scope.partners = function(){
-		return Model.getPartners();
-	}
+	// ****************** Disabled for first release *****************
+	// $scope.partners = function(){
+	// 	return Model.getPartners();
+	// }
 
-	$scope.loadingPartners = function(){
-		if(Model.getPartners() === undefined){
-			return true;
-		} else {
-			return false;
-		}
-	}
+	// $scope.loadingPartners = function(){
+	// 	if(Model.getPartners() === undefined){
+	// 		return true;
+	// 	} else {
+	// 		return false;
+	// 	}
+	// }
+	// ***************************************************************
 
 	$scope.companyInfoScroll = function(){
 		adjustFeedContainer();
