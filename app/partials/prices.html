@@ -4,16 +4,18 @@
 </div>
 <div id="aboutText">
 	<div class="center">
-		<a ng-href="#/prislista/guldpaketet" class="offerLink"><div class="offer" id="goldOffer">
-			<div class="priceHeader" id="gold">Guldpaketet</div>
+		<a ng-href="#/prislista/guldpaketet" class="offerLink"><div class="offer" id="goldOffer" ng-click="companyInfoScroll()">
+			<div class="priceHeader" id="gold">Guldpaketet</div> 
 			<div class="offerContent">
+				<div class="goldIntroText">Med guldpaket blir ni en huvudsponsor för branschdagen, vilket generarar fler fördelar för er som företag vad det gäller marknadsföring!</div>
 				<ul>
 					<li>Monterplats 3x2m</li>
-					<li>Mer synlig logotyp på hemsidan</li>
+					<li>Stor logotyp på hemsidan tidigare i flödet</li>
 					<li>Egen helsida i broschyren</li>
-					<li>Logotypen synlig i allt tryckt material.</li>
-					<li>Mat och fika för två representanter</li>
-					<li>AW för två representanter. </li>
+					<li>Logotypen synlig i <span style="cursor:help;" title="Allt tryckt material, innefattar personalens tröjor, broschyr, flyers, bordsryttare och rollup.">allt tryckt material.</span></li>
+					<li>Mat och fika för <span style="cursor:help;" title="Tillägg för ytterligare representanter: 200kr per representant">två representanter</span></li>
+					<li><span style="cursor:help;" title="Tillägg för ytterligare representanter: 450kr per representant">2st sittningsbiljetter</span></li>
+					<li>15 st barbiljetter till AWn och baren efter sittningen</li>
 				</ul>
 				<div class="price">
 					Pris: 15 000 kr
@@ -21,17 +23,33 @@
 			</div>
 		</div></a>
 
-		<a ng-href="#/prislista/silverpaketet" class="offerLink"><div class="offer" id="silverOffer">
+		<a ng-href="#/prislista/silverpaketet" class="offerLink"><div class="offer" id="silverOffer" ng-click="companyInfoScroll()">
 			<div class="priceHeader" id="silver">Silverpaketet</div>
 				<div class="offerContent">
 				<ul>
 					<li>Monterplats 2x2 meter</li>
 					<li>Delad halvsida i broschyren</li>
+					<li>Logotyp synlig på hemsidan</li>
 					<li>Logotypen syns i vår tryckta broschyr</li>
 					<li>Mat och fika för två representanter.</li>
+					<li>Tillägg för sittningen är 450 kr, då ingår även att delta under AW:n</li>
 				</ul>
 				<div class="price">
 					Pris: 10 000 kr
+				</div>
+			</div>
+		</div></a>
+
+		<a ng-href="#/prislista/föreläsningspaketet" class="offerLink"><div class="offer" id="presentationOffer" ng-click="companyInfoScroll()">
+			<div class="priceHeader" id="bronze">Föreläsningspaketet</div>
+				<div class="offerContent">
+				<ul>
+					<li>Föreläsning på 45 minuter</li>
+					<li>Plats att ställa upp med någon form av tävling/spel på AWn direkt efter mässan (kl.17-19)</li>
+					<li>2 st sittningsbiljetter </li>
+				</ul>
+				<div class="price">
+					Pris: 5 000 kr
 				</div>
 			</div>
 		</div></a>

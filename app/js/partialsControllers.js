@@ -28,26 +28,26 @@ app.controller('ScheduleCtrl', function ($scope, Model) {
 app.controller('PricesCtrl', function ($scope, Model) {
     angular.element(document).ready(function () {
 		adjustFeedContainer();
-		adjustSilverPacket();
+		// adjustSilverPacket();
     });
 
-	$(window).on('resize', function(){
-		if($(window).width() > 710){
-			adjustSilverPacket();
-		} else {
-			$("#silverOffer").css({'height':''});
-		}
-	});
+	// $(window).on('resize', function(){
+	// 	if($(window).width() > 710){
+	// 		adjustSilverPacket();
+	// 	} else {
+	// 		$("#silverOffer").css({'height':''});
+	// 	}
+	// });
 
-	var adjustSilverPacket = function(){
-		$("#silverOffer").css({'height':($("#goldOffer").height()+30+'px')});
-	}
+	// var adjustSilverPacket = function(){
+	// 	$("#silverOffer").css({'height':($("#goldOffer").height()+30+'px')});
+	// }
 
-	if($(window).width() > 710){
-		adjustSilverPacket();
-	} else {
-		$("#silverOffer").css({'height':''});
-	}
+	// if($(window).width() > 710){
+	// 	adjustSilverPacket();
+	// } else {
+	// 	$("#silverOffer").css({'height':''});
+	// }
 
 })
 
@@ -118,7 +118,7 @@ app.controller('PackageCtrl', function ($scope, $routeParams, $location, Model) 
 
     $scope.packageType = $routeParams.packageType;
 
-    var packages = ["guldpaketet", "silverpaketet"];
+    var packages = ["guldpaketet", "silverpaketet", "föreläsningspaketet"];
 
     if(packages.indexOf($scope.packageType) === -1){
     	$location.path("/prislista");

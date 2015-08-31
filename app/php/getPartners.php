@@ -18,6 +18,7 @@
 		$partner['placeInExpo'] = $line->placeInExpo;
 		$partner['logo'] = $line->logo;
 		$partner['website'] = $line->website;
+		$partner['id'] = $line->ID;
 		array_push($partners, $partner);
 	}
 	echo json_encode($partners);
