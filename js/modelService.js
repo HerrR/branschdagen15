@@ -18,6 +18,7 @@ app.factory('Model', function ($http) {
 		function(data) {
 			// If searching for one or multiple hashtags or users, tweets = data.statuses. Otherwise tweets = data.
 			tweets = data;
+			// console.log(data);
 			for(tweet in tweets){
 				var tweetEssentials = {};
 				var currentTweet = tweets[tweet];
@@ -38,6 +39,7 @@ app.factory('Model', function ($http) {
 	.success(
 		function(data){
 			instaPosts = data.data;
+			// console.log(data);
 			for(post in instaPosts){
 				var instaEssentials = {};
 				var currentPost = instaPosts[post];
@@ -56,6 +58,7 @@ app.factory('Model', function ($http) {
 	$http.get("php/getTeam.php")
 	.success(
 		function(data){
+			// console.log(data);
 			branschdagsgruppen = data;
 		});
 
@@ -69,6 +72,7 @@ app.factory('Model', function ($http) {
 
 	this.getEvents = function(){
 	    $http.get("php/getEvents.php").success(function(data){
+	    	// console.log(data);
 	    	for(i in data){
 	    		data[i].start = new Date(data[i].start);
 	    		if(data[i].end != null){
@@ -138,6 +142,7 @@ app.factory('Model', function ($http) {
 	    }
 
 	    $http(req).success(function(data){
+	    	console.log(data);
 	    	console.log("Email sent successfully!");
 	    	sendingEmail = false;
 	    	emailSent = true;

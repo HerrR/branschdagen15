@@ -8,7 +8,7 @@
 
 	$teamObjects = queryDb($conn, $teamQuery);
 
-	$team = [];
+	$team = array();
 
 	while($line = $teamObjects->fetch_object()){
 		$teamMember;

@@ -14,7 +14,7 @@
 		FROM events ORDER BY eventStart ASC";
 	}
 	
-	$events = [];
+	$events = array();
 
 	$eventsObject = queryDb($conn, $eventsQuery);
 	while($line = $eventsObject->fetch_object()){
