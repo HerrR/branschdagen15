@@ -9,7 +9,7 @@
 	    'consumer_secret' => $consumer_secret
 	);
 	$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-	$getfield = '?screen_name=sirbergeling';
+	$getfield = '?screen_name=branschdag';
 	
 	// $url = 'https://api.twitter.com/1.1/search/tweets.json';
 	// $getfield = '?q=#Branschdag15+OR+#Medieteknik+OR+from:SirBergeling+OR+from:Branschdag';

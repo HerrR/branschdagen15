@@ -2,13 +2,13 @@
 	include_once('config.php');
 	include_once('functions.php');
 
-	$teamQuery = "SELECT * FROM team ORDER BY viewWeight DESC, name ASC";
+	$teamQuery = "SELECT * FROM team ORDER BY viewWeight DESC, role, name ASC";
 
 	$conn = dbConnect($hostname, $username, $password, $database);
 
 	$teamObjects = queryDb($conn, $teamQuery);
 
-	$team = [];
+	$team = array();
 
 	while($line = $teamObjects->fetch_object()){
 		$teamMember;

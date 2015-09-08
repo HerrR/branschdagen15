@@ -71,45 +71,47 @@ app.controller('ContactCtrl', function ($scope, Model) {
 
 })
 
-app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, $http) {
+// ****************** Disabled for first release *****************
+// app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, $http) {
 
-    angular.element(document).ready(function () {
-		adjustFeedContainer();
-    });
+//     angular.element(document).ready(function () {
+// 		adjustFeedContainer();
+//     });
 
-	$scope.companyName = $routeParams.companyName;
+// 	$scope.companyName = $routeParams.companyName;
 
-	$scope.companyInfo = function(){
-		adjustFeedContainer();
-		return Model.getPartner($scope.companyName);
-	}
+// 	$scope.companyInfo = function(){
+// 		adjustFeedContainer();
+// 		return Model.getPartner($scope.companyName);
+// 	}
 
-	$scope.loadingPartners = function(){
-		if(Model.getPartners() === undefined){
-			adjustFeedContainer();
-			return true;
-		} else {
-			adjustFeedContainer();
-			return false;
-		}
-	}
+// 	$scope.loadingPartners = function(){
+// 		if(Model.getPartners() === undefined){
+// 			adjustFeedContainer();
+// 			return true;
+// 		} else {
+// 			adjustFeedContainer();
+// 			return false;
+// 		}
+// 	}
 	
-	var req = {
-    	url: "php/getEvents.php",
-      	method: "GET",
-      	params: {singleCompanyEvents:true, companyName:$scope.companyName}
-    }
+// 	var req = {
+//     	url: "php/getEvents.php",
+//       	method: "GET",
+//       	params: {singleCompanyEvents:true, companyName:$scope.companyName}
+//     }
 
-    $http(req).success(function(data){
-      	console.log(data);
-    })
+//     $http(req).success(function(data){
+//       	console.log(data);
+//     })
 
-	if(!$scope.companyInfo()){
-		if(!$scope.loadingPartners()){
-		 	$location.path("/home");
-		}
-	}
-})
+// 	if(!$scope.companyInfo()){
+// 		if(!$scope.loadingPartners()){
+// 		 	$location.path("/home");
+// 		}
+// 	}
+// })
+// ***************************************************************
 
 app.controller('PackageCtrl', function ($scope, $routeParams, $location, Model) {
     angular.element(document).ready(function () {

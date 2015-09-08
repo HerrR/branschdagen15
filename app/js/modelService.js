@@ -7,7 +7,9 @@ app.factory('Model', function ($http) {
 	var instaPosts = [];
 	var socialMediaPosts = [];
 	var branschdagsgruppen;
-	var partners;
+	// ****************** Disabled for first release *****************
+	// var partners;
+	// ***************************************************************
 	var events;
 
 
@@ -16,6 +18,7 @@ app.factory('Model', function ($http) {
 		function(data) {
 			// If searching for one or multiple hashtags or users, tweets = data.statuses. Otherwise tweets = data.
 			tweets = data;
+			console.log(data);
 			for(tweet in tweets){
 				var tweetEssentials = {};
 				var currentTweet = tweets[tweet];
@@ -36,6 +39,7 @@ app.factory('Model', function ($http) {
 	.success(
 		function(data){
 			instaPosts = data.data;
+			console.log(data);
 			for(post in instaPosts){
 				var instaEssentials = {};
 				var currentPost = instaPosts[post];
@@ -54,21 +58,26 @@ app.factory('Model', function ($http) {
 	$http.get("php/getTeam.php")
 	.success(
 		function(data){
+			console.log(data);
 			branschdagsgruppen = data;
 		});
 
-	$http.get("php/getPartners.php")
-	.success(
-		function(data){
-			partners = data;
-		});
+	// ****************** Disabled for first release *****************
+	// $http.get("php/getPartners.php")
+	// .success(
+	// 	function(data){
+	// 		partners = data;
+	// 	});
+	// ***************************************************************
 
 	this.getEvents = function(){
 	    $http.get("php/getEvents.php").success(function(data){
+	    	console.log(data);
 	    	for(i in data){
-	    		data[i].start = new Date(data[i].start);
+	    		console.log(data[i]);
+	    		data[i].start = new Date(data[i].start).getTime();
 	    		if(data[i].end != null){
-	    			data[i].end = new Date(data[i].end);
+	    			data[i].end = new Date(data[i].end).getTime();
 	    		}
 	    	}
 	      	events = data;
@@ -103,18 +112,20 @@ app.factory('Model', function ($http) {
   		return socialMediaPosts;
   	}
 
-  	this.getPartners = function(){
-  		return partners;
-  	}
+	// ****************** Disabled for first release *****************
+  	// this.getPartners = function(){
+  	// 	return partners;
+  	// }
 
-  	this.getPartner = function(partnerName){
-  		for(partner in partners){
-  			if(partners[partner].name == partnerName){
-  				return partners[partner];
-  			}
-  		}
-  		return false;
-  	}
+  	// this.getPartner = function(partnerName){
+  	// 	for(partner in partners){
+  	// 		if(partners[partner].name == partnerName){
+  	// 			return partners[partner];
+  	// 		}
+  	// 	}
+  	// 	return false;
+  	// }
+	// ***************************************************************
 
   	this.getBDgruppen = function(){
   		return branschdagsgruppen;

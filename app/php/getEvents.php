@@ -14,7 +14,7 @@
 		FROM events ORDER BY eventStart ASC";
 	}
 	
-	$events = [];
+	$events = array();
 
 	$eventsObject = queryDb($conn, $eventsQuery);
 	while($line = $eventsObject->fetch_object()){
@@ -22,8 +22,16 @@
 		$event['name'] = $line->name;
 		$event['type'] = $line->type;
 		$event['description'] = $line->description;
-		$event['start'] = $line->eventStart;
-		$event['end'] = $line->eventEnd;
+
+		$event['start'] = date('Y/m/d H:i:s', strtotime($line->eventStart));
+		$mySQLend = $line->eventEnd;
+		if($mySQLend == null){
+			$event['end'] = $mySQLend; 
+		} else {
+			$event['end'] = date('Y/m/d H:i:s', strtotime($line->eventEnd));
+		}
+				// $phpdate = strtotime( $mysqldate );
+// $mysqldate = date( 'Y-m-d H:i:s', $phpdate );
 		array_push($events, $event);
 	}
 
