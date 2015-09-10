@@ -52,17 +52,17 @@ app.controller('AppCtrl', function ($scope, $route, Model) {
 	}
 
 	// ****************** Disabled for first release *****************
-	// $scope.partners = function(){
-	// 	return Model.getPartners();
-	// }
+	$scope.partners = function(){
+		return Model.getPartners();
+	}
 
-	// $scope.loadingPartners = function(){
-	// 	if(Model.getPartners() === undefined){
-	// 		return true;
-	// 	} else {
-	// 		return false;
-	// 	}
-	// }
+	$scope.loadingPartners = function(){
+		if(Model.getPartners() === undefined){
+			return true;
+		} else {
+			return false;
+		}
+	}
 	// ***************************************************************
 
 	$scope.companyInfoScroll = function(){
@@ -70,13 +70,6 @@ app.controller('AppCtrl', function ($scope, $route, Model) {
 		$('html, body').animate({scrollTop: $(".container").position().top}, 200);
 	}
 })
-
-app.filter('startFrom', function() {
-    return function(input, start) {
-        var start = +start;
-        return input.slice(start);
-    }
-});
 
 app.filter('capitalize', function() {
     return function(input) {

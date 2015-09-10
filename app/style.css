@@ -29,13 +29,14 @@ body {
 #content {
 	display:block;
 	width:80%;
-	margin:auto;
+	margin: 60px auto;
 }
 
 .container {
 	display: inline-block;
-	width: 60%;
-	margin: 60px 1% 0px 7.5%;
+	width: 75%;
+	margin:0px 1% 0px 0px;
+	/*margin: 60px 1% 0px 7.5%;*/
 	background-color: rgba(255,255,255,0.95);
 	min-height: 550px;
 }
@@ -45,16 +46,17 @@ body {
 	display: inline-block;
 	position:relative;
 	vertical-align: top;
-	margin: 60px 7.5% 0px 0px;
-	width: 20%;
+	/*margin: 60px 7.5% 0px 0px;*/
+	width: 24%;
+	height:550px;
 	background-color: rgba(255,255,255,0.15);
 	overflow:hidden;
 }
 
 #feedContent {
 	max-height:75%;
-	max-height:-webkit-calc(100% - 191px);
-	max-height:calc(100% - 191px);
+	/*max-height:-webkit-calc(100% - 191px);*/
+	/*max-height:calc(100% - 191px);*/
 	overflow-y:scroll;
 	padding-right:50px;
 	width:105%;
@@ -319,11 +321,12 @@ body {
 }
 
 #socialMediaContainer {
-	width:90%;
+	width:100%;
 	display:none;
-	min-height:120px;
+	margin:25px 0px 0px 0px;
+	/*min-height:120px;*/
 	background-color: rgba(255,255,255,0.95);
-	margin:20px 5% 0px 5%;
+	/*margin:20px 5% 0px 5%;*/
 }
 
 #socialMediaContainer .headline hr{
@@ -363,9 +366,9 @@ body {
 }
 
 #partners {
-	width:81.3%;
+	width:100%;
 	display:inline-block;
-	margin: 30px 7.5% 0px 7.5%;
+	margin:25px 0px 0px 0px;
 	background-color: rgba(255,255,255,0.95);
 }
 
@@ -600,6 +603,11 @@ body {
 .offerContent ul {
 	margin-bottom:40px;
 }
+
+.scheduleDate{
+	box-sizing:border-box;
+	padding:0px 0px 20px 0px;
+}
 .event {
 	margin-bottom:15px;
 	box-sizing:border-box;
@@ -626,9 +634,13 @@ body {
 	max-width:calc(100% - 130px);
 }
 
-@media (max-width: 2048px){
+@media (min-width: 2048px){
 	.contactProfile {
 		width:25%;
+	}
+
+	#content {
+		width:50%;
 	}
 }
 
@@ -636,13 +648,18 @@ body {
 	.contactProfile {
 		width:30%;
 	}
+
 	#content{
-		width:100%;
+		width:80%;
 	}
 }
 
 
 @media (max-width: 1024px){
+	#content {
+		width:90%;
+	}
+
 	.container {
 		width: 65%;
 		margin: 60px 0.7% 0px 3%;
@@ -651,11 +668,6 @@ body {
 	#feedContainer{
 		margin: 60px 0px 0px 0px;
 		width: 28%;
-	}
-
-	#partners {
-		width:94%;
-		margin: 20px 3% 0px 3%;
 	}
 
 	#companyDescription {
@@ -681,6 +693,10 @@ body {
 
 @media (max-width: 725px){
 
+	#content {
+		width:95%;
+	}
+
 	.eventTimes {
 		width:100%;
 		text-align:center;
@@ -692,8 +708,9 @@ body {
 		max-width:initial;
 	}
 	.container {
-		width:90%;
-		margin:40px 0px 0px 5%;
+		width:100%;
+		margin:0px;
+		/*margin:40px 0px 0px 5%;*/
 	}
 
 	.contentLoadingIndicator{
@@ -728,11 +745,6 @@ body {
 
 	#socialMediaContainer {
 		display:inline-block;
-	}
-
-	#partners {
-		width:90%;
-		margin: 20px 5% 0px 5%;
 	}
 
 	.contactProfile {

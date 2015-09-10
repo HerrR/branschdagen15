@@ -1,3 +1,27 @@
+app.filter('dateFilter', function() {
+  	return function(events, date) {
+  		var filtered = [];
+  		for(e in events){
+  			var dateHolder = new Date(events[e].start);
+  			var transformedDate = dateHolder.getDate() + "/" + dateHolder.getMonth() + "/" + dateHolder.getFullYear();
+  			if(transformedDate === date){
+  				filtered.push(events[e]);
+  			}
+  		}
+  		// console.log(events, date);
+    return filtered;
+  }
+});
+
+app.filter('dateToString', function(){
+	return function(date){
+		var months = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"];
+		// console.log(months[parseInt(date.split("/")[1])]);
+		// console.log(months[10]);
+		return date.split("/")[0]+" "+months[parseInt(date.split("/")[1])]+" "+date.split("/")[2];
+	}
+})
+
 app.controller('HomeCtrl', function ($scope, Model) {
     angular.element(document).ready(function () {
 		adjustFeedContainer();
@@ -21,6 +45,10 @@ app.controller('ScheduleCtrl', function ($scope, Model) {
     	} else {
     		return false;
     	}
+    }
+
+    $scope.eventDates = function(){
+    	return Model.getEventDates();
     }
 
 })
@@ -72,45 +100,45 @@ app.controller('ContactCtrl', function ($scope, Model) {
 })
 
 // ****************** Disabled for first release *****************
-// app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, $http) {
+app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, $http) {
 
-//     angular.element(document).ready(function () {
-// 		adjustFeedContainer();
-//     });
+    angular.element(document).ready(function () {
+		adjustFeedContainer();
+    });
 
-// 	$scope.companyName = $routeParams.companyName;
+	$scope.companyName = $routeParams.companyName;
 
-// 	$scope.companyInfo = function(){
-// 		adjustFeedContainer();
-// 		return Model.getPartner($scope.companyName);
-// 	}
+	$scope.companyInfo = function(){
+		adjustFeedContainer();
+		return Model.getPartner($scope.companyName);
+	}
 
-// 	$scope.loadingPartners = function(){
-// 		if(Model.getPartners() === undefined){
-// 			adjustFeedContainer();
-// 			return true;
-// 		} else {
-// 			adjustFeedContainer();
-// 			return false;
-// 		}
-// 	}
+	$scope.loadingPartners = function(){
+		if(Model.getPartners() === undefined){
+			adjustFeedContainer();
+			return true;
+		} else {
+			adjustFeedContainer();
+			return false;
+		}
+	}
 	
-// 	var req = {
-//     	url: "php/getEvents.php",
-//       	method: "GET",
-//       	params: {singleCompanyEvents:true, companyName:$scope.companyName}
-//     }
+	var req = {
+    	url: "php/getEvents.php",
+      	method: "GET",
+      	params: {singleCompanyEvents:true, companyName:$scope.companyName}
+    }
 
-//     $http(req).success(function(data){
-//       	console.log(data);
-//     })
+    $http(req).success(function(data){
+      	// console.log(data);
+    })
 
-// 	if(!$scope.companyInfo()){
-// 		if(!$scope.loadingPartners()){
-// 		 	$location.path("/home");
-// 		}
-// 	}
-// })
+	if(!$scope.companyInfo()){
+		if(!$scope.loadingPartners()){
+		 	$location.path("/home");
+		}
+	}
+})
 // ***************************************************************
 
 app.controller('PackageCtrl', function ($scope, $routeParams, $location, Model) {

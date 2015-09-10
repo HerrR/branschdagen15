@@ -29,10 +29,10 @@
 
 		<link rel="stylesheet" type="text/css" href="style.css" />
 
-	    <script src="bower_components/angular/angular.min.js"></script>
-	    <script src="bower_components/angular-route/angular-route.min.js"></script>
-	    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
-	    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+	    <script src="../bower_components/angular/angular.min.js"></script>
+	    <script src="../bower_components/angular-route/angular-route.min.js"></script>
+	    <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
+	    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 
 	    <script src="js/app.js"></script>
 	    <script src="js/modelService.js"></script>
@@ -54,8 +54,7 @@
 				<a ng-class="{active: $route.current.activeTab == 'contact'}" href="#/kontakt">Kontakt</a>
 			</div>
 			<div id="content">
-				<div class="container" ng-view></div>
-				<div id="feedContainer">
+				<div class="container" ng-view></div><div id="feedContainer">
 					<div class="headline">
 						Nyheter
 						<hr/>
@@ -67,7 +66,7 @@
 					<div id="feedContent">
 						<img src="img/Media Loading.gif" ng-show="loadingSocialMedia()" class="loadingIcon"/>
 
-						<div ng-repeat="post in socialMedia() | orderBy: 'created':true | startFrom:smPage*smPageSize" id="post_{{$index}}">
+						<div ng-repeat="post in socialMedia() | orderBy: 'created':true" id="post_{{$index}}">
 							<div ng-if="post.type == 'tweet' ">
 								<div class="sm-post" id="tweet">
 									<div class="sm-header">
@@ -137,7 +136,7 @@
 				</div>
 
 				<!-- ****************** Disabled for first release ***************** -->
-<!-- 				<div id="partners" ng-hide="loadingPartners()">
+				<div id="partners" ng-hide="loadingPartners()">
 					<div class="headline">
 						Samarbetspartners
 						<hr/>
@@ -162,12 +161,12 @@
 							</a>
 						</div>
 					</div>
-				</div> -->
+				</div>
 				<!-- *************************************************************** -->
-			<div id="footer">
-				<div class="footerText">Sektionen för Medieteknik, KTH<br/>
-				<a href="http://www.medieteknik.com" target="_blank">www.medieteknik.com</a></div>
 			</div>
+		<div id="footer">
+			<div class="footerText">Sektionen för Medieteknik, KTH<br/>
+			<a href="http://www.medieteknik.com" target="_blank">www.medieteknik.com</a></div>
 		</div>
 	</body>
 </html>

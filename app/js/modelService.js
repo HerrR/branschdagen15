@@ -8,9 +8,10 @@ app.factory('Model', function ($http) {
 	var socialMediaPosts = [];
 	var branschdagsgruppen;
 	// ****************** Disabled for first release *****************
-	// var partners;
+	var partners = [];
 	// ***************************************************************
 	var events;
+	var eventDates = [];
 
 
 	$http.get("php/getTweets.php")
@@ -18,7 +19,7 @@ app.factory('Model', function ($http) {
 		function(data) {
 			// If searching for one or multiple hashtags or users, tweets = data.statuses. Otherwise tweets = data.
 			tweets = data;
-			console.log(data);
+			// console.log(data);
 
 			for(tweet in tweets){
 				var tweetEssentials = {};
@@ -40,7 +41,7 @@ app.factory('Model', function ($http) {
 	.success(
 		function(data){
 			instaPosts = data.data;
-			console.log(data);
+			// console.log(data);
 			for(post in instaPosts){
 				var instaEssentials = {};
 				var currentPost = instaPosts[post];
@@ -60,36 +61,47 @@ app.factory('Model', function ($http) {
 	.success(
 		function(data){
 
-			console.log(data);
+			// console.log(data);
 
 			branschdagsgruppen = data;
 		});
 
 	// ****************** Disabled for first release *****************
-	// $http.get("php/getPartners.php")
-	// .success(
-	// 	function(data){
-	// 		partners = data;
-	// 	});
+	$http.get("php/getPartners.php")
+	.success(
+		function(data){
+			partners = data;
+		});
 	// ***************************************************************
 
 	this.getEvents = function(){
 	    $http.get("php/getEvents.php").success(function(data){
 
-	    	console.log(data);
+	    	// console.log(data);
 	    	for(i in data){
-	    		console.log(data[i]);
+	    		var dateHolder = new Date(data[i].start);
+
+	    		var eventDateNoTime = dateHolder.getDate() + "/" + dateHolder.getMonth() + "/" + dateHolder.getFullYear();
 	    		data[i].start = new Date(data[i].start).getTime();
 	    		if(data[i].end != null){
 	    			data[i].end = new Date(data[i].end).getTime();
 	    		}
+
+	    		if(eventDates.indexOf(eventDateNoTime) === -1){
+	    			eventDates.push(eventDateNoTime);
+	    		}
 	    	}
+	    	// console.log(eventDates);
 	      	events = data;
 	    })
 	}
 
 	this.getSchedule = function(){
 		return events;
+	}
+
+	this.getEventDates = function(){
+		return eventDates;
 	}
 
 	this.loadingInstagram = function(){
@@ -117,18 +129,18 @@ app.factory('Model', function ($http) {
   	}
 
 	// ****************** Disabled for first release *****************
-  	// this.getPartners = function(){
-  	// 	return partners;
-  	// }
+  	this.getPartners = function(){
+  		return partners;
+  	}
 
-  	// this.getPartner = function(partnerName){
-  	// 	for(partner in partners){
-  	// 		if(partners[partner].name == partnerName){
-  	// 			return partners[partner];
-  	// 		}
-  	// 	}
-  	// 	return false;
-  	// }
+  	this.getPartner = function(partnerName){
+  		for(partner in partners){
+  			if(partners[partner].name == partnerName){
+  				return partners[partner];
+  			}
+  		}
+  		return false;
+  	}
 	// ***************************************************************
 
   	this.getBDgruppen = function(){
@@ -138,7 +150,7 @@ app.factory('Model', function ($http) {
   	this.contactMe = function(contactInfo){
   		sendingEmail = true;
   		// console.log(contactInfo);
-  		console.log("Sending email...");
+  		// console.log("Sending email...");
 
 	    var req = {
 	      	url: "php/contactMe.php",
@@ -147,8 +159,8 @@ app.factory('Model', function ($http) {
 	    }
 
 	    $http(req).success(function(data){
-	    	console.log(data);
-	    	console.log("Email sent successfully!");
+	    	// console.log(data);
+	    	// console.log("Email sent successfully!");
 	    	sendingEmail = false;
 	    	emailSent = true;
 	    })
