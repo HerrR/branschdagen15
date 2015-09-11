@@ -16,8 +16,6 @@ app.filter('dateFilter', function() {
 app.filter('dateToString', function(){
 	return function(date){
 		var months = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"];
-		// console.log(months[parseInt(date.split("/")[1])]);
-		// console.log(months[10]);
 		return date.split("/")[0]+" "+months[parseInt(date.split("/")[1])]+" "+date.split("/")[2];
 	}
 })
@@ -56,27 +54,7 @@ app.controller('ScheduleCtrl', function ($scope, Model) {
 app.controller('PricesCtrl', function ($scope, Model) {
     angular.element(document).ready(function () {
 		adjustFeedContainer();
-		// adjustSilverPacket();
     });
-
-	// $(window).on('resize', function(){
-	// 	if($(window).width() > 710){
-	// 		adjustSilverPacket();
-	// 	} else {
-	// 		$("#silverOffer").css({'height':''});
-	// 	}
-	// });
-
-	// var adjustSilverPacket = function(){
-	// 	$("#silverOffer").css({'height':($("#goldOffer").height()+30+'px')});
-	// }
-
-	// if($(window).width() > 710){
-	// 	adjustSilverPacket();
-	// } else {
-	// 	$("#silverOffer").css({'height':''});
-	// }
-
 })
 
 app.controller('ContactCtrl', function ($scope, Model) {
@@ -99,7 +77,6 @@ app.controller('ContactCtrl', function ($scope, Model) {
 
 })
 
-// ****************** Disabled for first release *****************
 app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, $http) {
 
     angular.element(document).ready(function () {
@@ -107,6 +84,7 @@ app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, 
     });
 
 	$scope.companyName = $routeParams.companyName;
+	Model.getSingleCompanyEvents($scope.companyName);
 
 	$scope.companyInfo = function(){
 		adjustFeedContainer();
@@ -114,24 +92,8 @@ app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, 
 	}
 
 	$scope.loadingPartners = function(){
-		if(Model.getPartners() === undefined){
-			adjustFeedContainer();
-			return true;
-		} else {
-			adjustFeedContainer();
-			return false;
-		}
+		return Model.loadingPartners();
 	}
-	
-	var req = {
-    	url: "php/getEvents.php",
-      	method: "GET",
-      	params: {singleCompanyEvents:true, companyName:$scope.companyName}
-    }
-
-    $http(req).success(function(data){
-      	// console.log(data);
-    })
 
 	if(!$scope.companyInfo()){
 		if(!$scope.loadingPartners()){
@@ -139,7 +101,6 @@ app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, 
 		}
 	}
 })
-// ***************************************************************
 
 app.controller('PackageCtrl', function ($scope, $routeParams, $location, Model) {
     angular.element(document).ready(function () {

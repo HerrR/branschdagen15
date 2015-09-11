@@ -44,15 +44,20 @@
 	<body ng-controller="AppCtrl">
 		<div id="wrapper">
 			<div id="header">
-				<a ng-href="#/"><img src="img/branschdagen_logo.png" id="bdLogo"/></a>
+				<a ng-href="#/">
+					<div id="bdLogoContainer">
+						<img src="img/branschdagen_logo.png" id="bdLogo"/></a>
+					</div>
 				<img src="img/menu_icon.png" id="menuIcon" ng-click="toggleMenu()"/>
+
+				<div id="menu" class="menuClosed">
+					<a ng-class="{active: $route.current.activeTab == 'home'}" href="#/">Hem</a>
+					<a ng-class="{active: $route.current.activeTab == 'schedule'}" href="#/schema">Schema</a>
+					<a ng-class="{active: $route.current.activeTab == 'prices'}" href="#/prislista">Prislista</a>
+					<a ng-class="{active: $route.current.activeTab == 'contact'}" href="#/kontakt">Kontakt</a>
+				</div>
 			</div>
-			<div id="menu" class="menuClosed">
-				<a ng-class="{active: $route.current.activeTab == 'home'}" href="#/">Hem</a>
-				<a ng-class="{active: $route.current.activeTab == 'schedule'}" href="#/schema">Schema</a>
-				<a ng-class="{active: $route.current.activeTab == 'prices'}" href="#/prislista">Prislista</a>
-				<a ng-class="{active: $route.current.activeTab == 'contact'}" href="#/kontakt">Kontakt</a>
-			</div>
+
 			<div id="content">
 				<div class="container" ng-view></div><div id="feedContainer">
 					<div class="headline">
@@ -66,7 +71,7 @@
 					<div id="feedContent">
 						<img src="img/Media Loading.gif" ng-show="loadingSocialMedia()" class="loadingIcon"/>
 
-						<div ng-repeat="post in socialMedia() | orderBy: 'created':true" id="post_{{$index}}">
+						<div ng-repeat="post in socialMedia() | orderBy: 'created':true" id="post_{{$index}}" ng-class="{firstPost : $first, lastPost : $last}" >
 							<div ng-if="post.type == 'tweet' ">
 								<div class="sm-post" id="tweet">
 									<div class="sm-header">
@@ -135,7 +140,6 @@
 					</div>
 				</div>
 
-				<!-- ****************** Disabled for first release ***************** -->
 				<div id="partners" ng-hide="loadingPartners()">
 					<div class="headline">
 						Samarbetspartners
@@ -145,24 +149,18 @@
 						<div class="partnerCategory">
 							Guldpartners
 						</div>
-						<div class="partner" ng-repeat="partner in partners() | filter:type='Guld'" ng-click="companyInfoScroll()">
-							<a ng-href="#/foretag/{{partner.name}}">
-								<img ng-src="img/companyLogos/{{ partner.logo }}"/>
-							</a>
+						<div class="partner" ng-repeat="partner in partners() | filter:type='Guld'" ng-click="companyInfoScroll(partner.name)" style="background-image:url('img/companyLogos/{{partner.logo}}')">
 						</div>
 					</div>
 					<div class="silver">
 						<div class="partnerCategory">
 							Silverpartners
 						</div>
-						<div class="partner" ng-repeat="partner in partners() | filter:type='Silver'" ng-click="companyInfoScroll()">
-							<a ng-href="#/foretag/{{ partner.name }}">
-								<img ng-src="img/companyLogos/{{ partner.logo }}"/>
-							</a>
+						<div class="partner" ng-repeat="partner in partners() | filter:type='Silver'" ng-click="companyInfoScroll(partner.name)" style="background-image:url('img/companyLogos/{{partner.logo}}')">
 						</div>
 					</div>
 				</div>
-				<!-- *************************************************************** -->
+
 			</div>
 		<div id="footer">
 			<div class="footerText">Sektionen för Medieteknik, KTH<br/>

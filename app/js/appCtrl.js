@@ -1,4 +1,4 @@
-app.controller('AppCtrl', function ($scope, $route, Model) {
+app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 	var activeMenu = false;
 	var postIndex = 0;
 
@@ -51,23 +51,20 @@ app.controller('AppCtrl', function ($scope, $route, Model) {
 		return Model.getSocialMedia();
 	}
 
-	// ****************** Disabled for first release *****************
 	$scope.partners = function(){
 		return Model.getPartners();
 	}
 
 	$scope.loadingPartners = function(){
-		if(Model.getPartners() === undefined){
-			return true;
-		} else {
-			return false;
-		}
+		return Model.loadingPartners();
 	}
-	// ***************************************************************
 
-	$scope.companyInfoScroll = function(){
-		adjustFeedContainer();
-		$('html, body').animate({scrollTop: $(".container").position().top}, 200);
+	$scope.companyInfoScroll = function(companyName){
+		if(companyName != null){
+			$location.path("/foretag/"+companyName);
+			adjustFeedContainer();
+			$('html, body').animate({scrollTop: $(".container").position().top}, 200);
+		}
 	}
 })
 

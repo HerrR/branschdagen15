@@ -22,12 +22,10 @@ app.config(['$routeProvider',
         controller: 'ContactCtrl',
         activeTab: 'contact'
       }).
-      // ****************** Disabled for first release *****************
       when('/foretag/:companyName',{
         templateUrl: 'partials/company.html',
         controller: 'CompanyCtrl'
       }).
-      // ***************************************************************
       when('/prislista/:packageType', {
         templateUrl: 'partials/package.html',
         controller: 'PackageCtrl',

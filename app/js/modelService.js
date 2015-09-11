@@ -2,16 +2,18 @@ app.factory('Model', function ($http) {
 	var loadingTweets = true;
 	var loadingInstagram = true;
 	var sendingEmail = false;
+	var loadingPartners = true;
 	var emailSent = false;
 	var tweets = [];
 	var instaPosts = [];
 	var socialMediaPosts = [];
 	var branschdagsgruppen;
-	// ****************** Disabled for first release *****************
 	var partners = [];
-	// ***************************************************************
 	var events;
 	var eventDates = [];
+	var activeCompany;
+	var singleCompanyEvents;
+	var loadingSingleCompanyEvents;
 
 
 	$http.get("php/getTweets.php")
@@ -41,7 +43,6 @@ app.factory('Model', function ($http) {
 	.success(
 		function(data){
 			instaPosts = data.data;
-			// console.log(data);
 			for(post in instaPosts){
 				var instaEssentials = {};
 				var currentPost = instaPosts[post];
@@ -66,18 +67,31 @@ app.factory('Model', function ($http) {
 			branschdagsgruppen = data;
 		});
 
-	// ****************** Disabled for first release *****************
 	$http.get("php/getPartners.php")
 	.success(
 		function(data){
+			loadingPartners = false;
 			partners = data;
 		});
-	// ***************************************************************
+	
+	this.getSingleCompanyEvents = function(companyName){
+		loadingSingleCompanyEvents = true;
+		var req = {
+	    	url: "php/getEvents.php",
+	      	method: "GET",
+	      	params: {singleCompanyEvents:true, companyName:companyName}
+	    }
+
+	    $http(req).success(function(data){
+	    	loadingSingleCompanyEvents = false;
+	      	singleCompanyEvents = data;
+	    })
+	}
+	
 
 	this.getEvents = function(){
 	    $http.get("php/getEvents.php").success(function(data){
 
-	    	// console.log(data);
 	    	for(i in data){
 	    		var dateHolder = new Date(data[i].start);
 
@@ -94,6 +108,9 @@ app.factory('Model', function ($http) {
 	    	// console.log(eventDates);
 	      	events = data;
 	    })
+	}
+	this.loadingPartners = function(){
+		return loadingPartners;
 	}
 
 	this.getSchedule = function(){
@@ -128,7 +145,6 @@ app.factory('Model', function ($http) {
   		return socialMediaPosts;
   	}
 
-	// ****************** Disabled for first release *****************
   	this.getPartners = function(){
   		return partners;
   	}
@@ -141,7 +157,6 @@ app.factory('Model', function ($http) {
   		}
   		return false;
   	}
-	// ***************************************************************
 
   	this.getBDgruppen = function(){
   		return branschdagsgruppen;
@@ -149,8 +164,6 @@ app.factory('Model', function ($http) {
 
   	this.contactMe = function(contactInfo){
   		sendingEmail = true;
-  		// console.log(contactInfo);
-  		// console.log("Sending email...");
 
 	    var req = {
 	      	url: "php/contactMe.php",
@@ -159,8 +172,6 @@ app.factory('Model', function ($http) {
 	    }
 
 	    $http(req).success(function(data){
-	    	// console.log(data);
-	    	// console.log("Email sent successfully!");
 	    	sendingEmail = false;
 	    	emailSent = true;
 	    })

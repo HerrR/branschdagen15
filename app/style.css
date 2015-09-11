@@ -20,7 +20,7 @@ body {
 #header {
 	width: 100%;
 	background-color: #2d2d2a;
-	height: 80px;
+	min-height: 80px;
 	-webkit-box-shadow: 0px 3px 10px 0px rgba(50, 50, 50, 0.3);
 	-moz-box-shadow:    0px 3px 10px 0px rgba(50, 50, 50, 0.3);
 	box-shadow:         0px 3px 10px 0px rgba(50, 50, 50, 0.3);
@@ -38,7 +38,7 @@ body {
 	margin:0px 1% 0px 0px;
 	/*margin: 60px 1% 0px 7.5%;*/
 	background-color: rgba(255,255,255,0.95);
-	min-height: 550px;
+	min-height: 650px;
 }
 
 #feedContainer {
@@ -54,19 +54,28 @@ body {
 }
 
 #feedContent {
-	max-height:75%;
+	max-height:100%;
 	/*max-height:-webkit-calc(100% - 191px);*/
 	/*max-height:calc(100% - 191px);*/
 	overflow-y:scroll;
 	padding-right:50px;
 	width:105%;
-	margin-top:63px;
+	/*margin-top:63px;*/
+}
+
+.firstPost {
+	margin-top:65px;
+}
+
+.lastPost {
+	margin-bottom:130px;
 }
 
 .loadingIcon {
 	width:80%;
 	max-height:100%;
 	margin:10%;
+	margin-top:100px;
 }
 
 .sm-post {
@@ -171,14 +180,14 @@ body {
 .arrowBox {
 	width:100%;
 	padding:20px 0px;
-	background-color:rgba(255,255,255,0.7);
+	background-color:rgba(255,255,255,0.95);
 	cursor:pointer;
 	position:absolute;
   	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
     -moz-user-select: none; /* mozilla browsers */
     -khtml-user-select: none; /* webkit (konqueror) browsers */
     -ms-user-select: none;
-    margin-top:5px;
+    /*margin-top:5px;*/
 }
 
 .top{
@@ -202,6 +211,12 @@ body {
 	min-height:75px;
 }
 
+#bdLogoContainer {
+	height:80px;
+	display:inline-block;
+	min-width:20%;
+}
+
 #bdLogo {
 	box-sizing: border-box;
 	padding-left: 30px;
@@ -214,9 +229,10 @@ body {
 #menuIcon {
 	float: right;
 	box-sizing: border-box;
-	padding: 27px;
+	padding: 20px;
 	max-height: 100%;
 	cursor:pointer;
+	display:none;
 }
 
 .headline {
@@ -280,6 +296,9 @@ body {
 	background-color: #2d2d2a;
 	color: white;
 	text-align: center;
+	width:60%;
+	display:inline-block;
+	height:50px;
 }
 
 #menu .active {
@@ -287,17 +306,9 @@ body {
 	/*color: #328c96;*/ /* Blue */
 }
 
-#menu.menuOpen{
-	-webkit-transition: 0.3s;
-	transition: 0.3s;
-	height: 50px;
-}
 
-#menu.menuClosed {
-	-webkit-transition: 0.3s;
-	transition: 0.3s;
-	height: 0px;
-}
+
+
 
 #menu a {
 	display: inline-block;
@@ -417,18 +428,28 @@ body {
 	text-align: center;
 	margin:0px 1% 0px 1%;
 	vertical-align: middle;
+	    /*width: 30%;*/
+    /*height: 250px;*/
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
 }
-
+/*
 .partner img {
 	max-width:100%;
-}
+}*/
 
 .gold .partner {
-	width:30%;
+	width:300px;
+	height:300px;
+	max-width:90%;
 }
 
 .silver .partner {
-	width:20%;
+	width:175px;
+	height:175px;
+	max-width:75%;
 }
 
 #companyInfo {
@@ -656,6 +677,18 @@ body {
 
 
 @media (max-width: 1024px){
+
+	#menu a{
+		width: initial;
+		max-width: initial;
+		padding: 0px 10px 0px 10px;
+	}
+	#menu{
+		width: initial;
+		float: right;
+		padding: 30px 20px 0px 0px;
+		height: initial;
+	}
 	#content {
 		width:90%;
 	}
@@ -692,6 +725,29 @@ body {
 }
 
 @media (max-width: 725px){
+	#menuIcon {
+		display:initial;
+	}
+
+	#menu {
+		width:100%;
+		padding:0px;
+		/*height:100%;*/
+		float:none;
+	}
+
+	#menu.menuOpen{
+		-webkit-transition: 0.3s;
+		transition: 0.3s;
+		height: 50px;
+	}
+
+
+	#menu.menuClosed {
+		-webkit-transition: 0.3s;
+		transition: 0.3s;
+		height: 0px;
+	}
 
 	#content {
 		width:95%;
