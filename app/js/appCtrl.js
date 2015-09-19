@@ -2,7 +2,7 @@ app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 	var activeMenu = false;
 	var postIndex = 0;
 
-	$scope.nextPage = function(){
+	$scope.nextPost = function(){
 		if(postIndex < $scope.socialMedia().length-1){
 			postIndex += 1;
 			var nextPost = "#post_"+postIndex;
@@ -10,7 +10,7 @@ app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 		}
 	};
 
-	$scope.previousPage = function(){
+	$scope.previousPost = function(){
 		if(postIndex > 0){
 			postIndex -= 1;
 			var previousPost = "#post_"+postIndex;
