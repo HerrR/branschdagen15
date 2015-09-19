@@ -36,6 +36,7 @@ app.factory('Model', function ($http) {
 				socialMediaPosts.push(tweetEssentials);
 			}
 			loadingTweets = false;
+			console.log(socialMediaPosts);
 		}
 	);
 
@@ -56,14 +57,12 @@ app.factory('Model', function ($http) {
 				socialMediaPosts.push(instaEssentials);
 			}
 			loadingInstagram = false;
+			console.log(socialMediaPosts);
 		})
 
 	$http.get("php/getTeam.php")
 	.success(
 		function(data){
-
-			// console.log(data);
-
 			branschdagsgruppen = data;
 		});
 
@@ -71,7 +70,25 @@ app.factory('Model', function ($http) {
 	.success(
 		function(data){
 			loadingPartners = false;
-			partners = data;
+
+			var goldPartners = [];
+			var silverPartners = [];
+			var lecturers = [];
+
+			for(item in data){
+				if(data[item].type === "Guld"){
+					goldPartners.push(data[item]);
+				} else if(data[item].type === "Silver") {
+					silverPartners.push(data[item]);
+				} else if(data[item].type === "Föreläsare") {
+					lecturers.push(data[item]);
+				} else {
+					console.log("Unknown type of partner "+ data[item]);
+				}
+			}
+
+			var allPartners = {"Guld":goldPartners, "Silver":silverPartners, "Föreläsare":lecturers};
+			partners = allPartners;
 		});
 	
 	this.getSingleCompanyEvents = function(companyName){
@@ -105,7 +122,6 @@ app.factory('Model', function ($http) {
 	    			eventDates.push(eventDateNoTime);
 	    		}
 	    	}
-	    	// console.log(eventDates);
 	      	events = data;
 	    })
 	}
@@ -150,9 +166,11 @@ app.factory('Model', function ($http) {
   	}
 
   	this.getPartner = function(partnerName){
-  		for(partner in partners){
-  			if(partners[partner].name == partnerName){
-  				return partners[partner];
+  		for(type in partners){
+  			for(index in partners[type]){
+  				if(partners[type][index].name === partnerName){
+  					return partners[type][index];
+  				}
   			}
   		}
   		return false;

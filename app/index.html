@@ -160,20 +160,20 @@
 						<div class="partnerCategory">
 							Guldpartners
 						</div>
-						<img class="partner" ng-repeat="partner in partners() | filter:type='Guld'" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{partner.logo}}">
+						<img class="partner" ng-repeat="partner in goldPartners()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{partner.logo}}">
 					</div>
 					<div class="silver">
 						<div class="partnerCategory">
 							Silverpartners
 						</div>
-						<img class="partner" ng-repeat="partner in partners() | filter:type='Silver'" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{partner.logo}}">
+						<img class="partner" ng-repeat="partner in silverPartners()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{partner.logo}}">
 					</div>
 
 					<div class="lectures">
 						<div class="partnerCategory">
 							Föreläsare
 						</div>
-						<img class="partner" ng-repeat="partner in partners() | filter:type='Föreläsare'" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{partner.logo}}">
+						<img class="partner" ng-repeat="partner in lecturers()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{partner.logo}}">
 					</div>
 
 				</div>

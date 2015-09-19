@@ -12,14 +12,13 @@
 
 	while($line = $partnersObjects->fetch_object()){
 		$partner;
+		$partner['id'] = $line->ID;
 		$partner['name'] = $line->name;
 		$partner['type'] = $line->partnerType;
 		$partner['description'] = $line->partnerDescription;
 		$partner['placeInExpo'] = $line->placeInExpo;
 		$partner['logo'] = $line->logo;
 		$partner['website'] = $line->website;
-		// Needs to be verified
-		// $partner['id'] = $line->id;
 		array_push($partners, $partner);
 	}
 	echo json_encode($partners);

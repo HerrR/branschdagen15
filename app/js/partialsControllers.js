@@ -79,9 +79,9 @@ app.controller('ContactCtrl', function ($scope, Model) {
 
 app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, $http) {
 
-    angular.element(document).ready(function () {
+  angular.element(document).ready(function () {
 		adjustFeedContainer();
-    });
+  });
 
 	$scope.companyName = $routeParams.companyName;
 	Model.getSingleCompanyEvents($scope.companyName);

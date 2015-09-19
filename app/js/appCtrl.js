@@ -51,8 +51,20 @@ app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 		return Model.getSocialMedia();
 	}
 
-	$scope.partners = function(){
-		return Model.getPartners();
+	// $scope.partners = function(){
+	// 	return Model.getPartners();
+	// }
+
+	$scope.goldPartners = function(){
+		return Model.getPartners()["Guld"];
+	}
+
+	$scope.silverPartners = function(){
+		return Model.getPartners()["Silver"];
+	}
+
+		$scope.lecturers = function(){
+		return Model.getPartners()["Föreläsare"];
 	}
 
 	$scope.loadingPartners = function(){
