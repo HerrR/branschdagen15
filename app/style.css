@@ -101,6 +101,7 @@ body {
 	box-sizing:border-box;
 	padding:10px;
 	width:30%;
+	margin-top:7px;
 }
 
 .sm-userInfoContainer {
@@ -132,6 +133,12 @@ body {
     font-family: 'Lato', Sans-Serif;
     font-weight: bold;
     font-size: 20px;
+}
+
+.sm-created {
+	color:white;
+	font-size:8pt;
+	margin-bottom:13px;
 }
 
 #tweet .sm-header {
@@ -438,22 +445,22 @@ body {
 	text-align: center;
 	margin:20px;
 	vertical-align: middle;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 
 .gold .partner {
 	max-width: 250px;
-	max-height: 250px;
+	max-height: 175px;
 }
 
 .silver .partner {
 	max-width:175px;
-	max-height:175px;
+	max-height:100px;
 }
 
 .lectures .partner {
 	max-width:140px;
-	max-height:140px;
+	max-height:100px;
 }
 
 #companyInfo {
@@ -481,6 +488,7 @@ body {
 
 #companyInfo img{
 	max-width:150px;
+	max-height:140px;
 }
 
 #basicInfo {
@@ -698,13 +706,13 @@ body {
 	}
 
 	.container {
-		width: 65%;
-		margin: 60px 0.7% 0px 3%;
+		width: 69%;
+		margin: 0px 1% 0px 0px;
 	}
 
 	#feedContainer{
-		margin: 60px 0px 0px 0px;
-		width: 28%;
+		margin: 0px 0px 0px 0px;
+		width: 30%;
 	}
 
 	#companyDescription {

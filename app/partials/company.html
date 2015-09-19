@@ -8,7 +8,7 @@
 		<div class="companyLogoContainer">
 			<a href="{{ companyInfo().website }}" target="_blank"><img ng-src="img/companyLogos/{{ companyInfo().logo }}"/></a><br/>
 		</div>
-		Monterplats: <b>{{ companyInfo().placeInExpo}}</b> <br/>
+		<div ng-hide="companyInfo().placeInExpo === null">Monterplats: <b>{{ companyInfo().placeInExpo}}</b> <br/></div>
 		Typ av partner: <b>{{ companyInfo().type }}</b> <br/>
 		<!-- <a target="_blank" href="{{ companyInfo().website }}">Hemsida</a> <br/> -->
 	</div>

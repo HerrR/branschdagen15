@@ -72,11 +72,12 @@ app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 	}
 
 	$scope.companyInfoScroll = function(companyName){
-		if(companyName != null){
-			$location.path("/foretag/"+companyName);
-			adjustFeedContainer();
-			$('html, body').animate({scrollTop: $(".container").position().top}, 200);
-		}
+		// Disabled for now
+		// if(companyName != null){
+		// 	$location.path("/foretag/"+companyName);
+		// 	adjustFeedContainer();
+		// 	$('html, body').animate({scrollTop: $(".container").position().top}, 200);
+		// }
 	}
 })
 
