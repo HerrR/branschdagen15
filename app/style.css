@@ -16,7 +16,6 @@ body {
 	background-repeat: no-repeat;
 }
 
-
 #header {
 	width: 100%;
 	background-color: #2d2d2a;
@@ -242,6 +241,10 @@ body {
 	display:none;
 }
 
+.socialMediaMenu {
+	display:none;
+}
+
 .headline {
 	font-weight:bold;
 	/*background-color: rgba(45,45,42,0.9);*/
@@ -345,6 +348,25 @@ body {
 	/*min-height:120px;*/
 	background-color: rgba(255,255,255,0.95);
 	/*margin:20px 5% 0px 5%;*/
+}
+
+#menu a.socialMediaMenuItem {
+	display:inline-block;
+	text-align:center;
+	width:125px;
+	vertical-align: top;
+}
+
+#menu h3 {
+	margin:25px 0px 0px 0px;
+	color:#ddd310;
+	font-family:"Lato", "Open Sans", Sans-Serif;
+	padding:0px 30px;
+}
+
+#menu hr {
+	border-color:#ddd310;
+	width:65%;
 }
 
 #socialMediaContainer .headline hr{
@@ -749,13 +771,13 @@ body {
 	#menu.menuOpen{
 		-webkit-transition: 0.3s;
 		transition: 0.3s;
-		height: 50px;
+		height:100%;
 		float:none;
 	}
 
 	#menu.menuClosed {
-		-webkit-transition: 0.3s;
-		transition: 0.3s;
+		/*-webkit-transition: 0.3s;*/
+		/*transition: 0.3s;*/
 		height: 0px;
 		float:left;
 	}
@@ -801,13 +823,20 @@ body {
 		max-width:initial;
 		box-sizing:border-box;
 	}
-	#menu.menuOpen{
-		height:150px;
-	}
 
 	#menu > a:hover{
 		color: white; 
 		background-color:#ddd310;
+	}
+
+	#menu > .socialMediaMenu > a.socialMediaMenuItem:hover{
+		color: inherit;
+		background-color:inherit;
+		padding:15px;
+	}
+
+	.socialMediaMenu {
+		display:initial;
 	}
 
 	#socialMediaContainer {
