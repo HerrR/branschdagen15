@@ -21,13 +21,20 @@ app.factory('Model', function ($http) {
 		function(data) {
 			// If searching for one or multiple hashtags or users, tweets = data.statuses. Otherwise tweets = data.
 			tweets = data;
-			// console.log(data);
+			console.log("Hej");
 
 			for(tweet in tweets){
 				var tweetEssentials = {};
 				var currentTweet = tweets[tweet];
 				tweetEssentials.type = "tweet";
-				tweetEssentials.created = new Date(currentTweet.created_at);
+
+				// Fix for internet explorer...
+				var dateSubs = currentTweet.created_at.split(" ");
+				tweetEssentials.created = new Date(new Date(dateSubs[0]+" "+dateSubs[1]+" "+dateSubs[2]+" "+dateSubs[5]+" "+dateSubs[3]+" GMT"+dateSubs[4]));
+
+				// var test = currentTweet.created_at.split(" ");
+				// console.log(new Date(test[0]+" "+test[1]+" "+test[2]+" "+test[5]+" "+test[3]+" GMT"+test[4]));
+
 				tweetEssentials.name = currentTweet.user.name;
 				tweetEssentials.profilePic = currentTweet.user.profile_image_url;
 				tweetEssentials.text = currentTweet.text;
@@ -36,7 +43,6 @@ app.factory('Model', function ($http) {
 				socialMediaPosts.push(tweetEssentials);
 			}
 			loadingTweets = false;
-			console.log(socialMediaPosts);
 		}
 	);
 
@@ -57,7 +63,6 @@ app.factory('Model', function ($http) {
 				socialMediaPosts.push(instaEssentials);
 			}
 			loadingInstagram = false;
-			console.log(socialMediaPosts);
 		})
 
 	$http.get("php/getTeam.php")
@@ -75,15 +80,15 @@ app.factory('Model', function ($http) {
 			var silverPartners = [];
 			var lecturers = [];
 
-			for(item in data){
-				if(data[item].type === "Guld"){
-					goldPartners.push(data[item]);
-				} else if(data[item].type === "Silver") {
-					silverPartners.push(data[item]);
-				} else if(data[item].type === "Föreläsare") {
-					lecturers.push(data[item]);
+			for(var i=0;i<data.length;i++){
+				if(data[i].type === "Guld"){
+					goldPartners.push(data[i]);
+				} else if(data[i].type === "Silver") {
+					silverPartners.push(data[i]);
+				} else if(data[i].type === "Föreläsare") {
+					lecturers.push(data[i]);
 				} else {
-					console.log("Unknown type of partner "+ data[item]);
+					console.log("Unknown type of partner "+ data[i]);
 				}
 			}
 

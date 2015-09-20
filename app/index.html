@@ -54,8 +54,9 @@
 			<div id="header">
 				<a ng-href="#/">
 					<div id="bdLogoContainer">
-						<img src="img/branschdagen_logo.png" id="bdLogo"/></a>
+						<img src="img/branschdagen_logo.png" id="bdLogo"/>
 					</div>
+				</a>
 				<img src="img/menu_icon.png" id="menuIcon" ng-click="toggleMenu()"/>
 
 				<div id="menu" class="menuClosed">
@@ -167,9 +168,7 @@
 						</div>
 						<img class="partner" ng-repeat="partner in lecturers()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{ partner.logo }}">
 					</div>
-
 				</div>
-
 			</div>
 		<div id="footer">
 			<div class="footerText">Sektionen för Medieteknik, KTH<br/>
