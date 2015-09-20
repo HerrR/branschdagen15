@@ -55,8 +55,8 @@ body {
 	overflow-y:scroll;
 	padding-right:50px;
 	width:100%;
-	width:-webkit-calc(100% + 20px);
-	width: calc(100% + 20px);
+/*	width:-webkit-calc(100% + 20px);
+	width: calc(100% + 20px);*/
 }
 
 .firstPost {
