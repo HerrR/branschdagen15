@@ -73,11 +73,18 @@ app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 
 	$scope.companyInfoScroll = function(companyName){
 		// Disabled for now
-		// if(companyName != null){
-		// 	$location.path("/foretag/"+companyName);
-		// 	adjustFeedContainer();
-		// 	$('html, body').animate({scrollTop: $(".container").position().top}, 200);
-		// }
+		var chosenCompany = Model.getPartner(companyName);
+		if(companyName != null){
+			if(chosenCompany.description === null){
+				// window.location.href=chosenCompany.website;
+				window.open(chosenCompany.website, '_blank');
+				// console.log("no company description for given company");
+			} else {
+				$location.path("/foretag/"+companyName);
+				adjustFeedContainer();
+				$('html, body').animate({scrollTop: $(".container").position().top}, 200);
+			}
+		}
 	}
 })
 

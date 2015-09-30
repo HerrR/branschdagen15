@@ -21,7 +21,6 @@ app.factory('Model', function ($http) {
 		function(data) {
 			// If searching for one or multiple hashtags or users, tweets = data.statuses. Otherwise tweets = data.
 			tweets = data;
-			console.log("Hej");
 
 			for(tweet in tweets){
 				var tweetEssentials = {};
@@ -94,6 +93,8 @@ app.factory('Model', function ($http) {
 
 			var allPartners = {"Guld":goldPartners, "Silver":silverPartners, "Föreläsare":lecturers};
 			partners = allPartners;
+
+			console.log(partners);
 		});
 	
 	this.getSingleCompanyEvents = function(companyName){

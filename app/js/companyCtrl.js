@@ -1,8 +1,8 @@
 app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, $http) {
 
-  angular.element(document).ready(function () {
+	angular.element(document).ready(function () {
 		adjustFeedContainer();
-  });
+	});
 
 	$scope.companyName = $routeParams.companyName;
 	Model.getSingleCompanyEvents($scope.companyName);
@@ -19,6 +19,10 @@ app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, 
 	if(!$scope.companyInfo()){
 		if(!$scope.loadingPartners()){
 		 	$location.path("/home");
+		}
+	} else {
+		if($scope.companyInfo().description === null){
+			window.location.replace($scope.companyInfo().website);
 		}
 	}
 })

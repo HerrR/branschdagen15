@@ -454,6 +454,7 @@ body {
 	text-align: center;
 	margin:20px;
 	vertical-align: middle;
+	cursor:pointer;
 }
 
 .gold .partner {
@@ -505,12 +506,30 @@ body {
 	text-align:left;
 }
 
+.websiteButton {
+	width: 80%;
+    display: block;
+    margin: auto;
+    margin-top: 25px;
+    font-family: 'Lato', Sans-serif;
+    border: none;
+    background-color: white;
+    font-size: 10pt;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
 #companyDescription {
 	display:inline-block;
 	vertical-align: top;
 	width:65%;
 	text-align:left;
 	white-space: pre-line;
+	/*padding:0px 10px 0px 10px;*/
 }
 
 .companyLogoContainer{
@@ -581,6 +600,10 @@ body {
 	-webkit-box-shadow: 0px 12px 30px 0px rgba(50, 50, 50, 0.3);
 	-moz-box-shadow:    0px 12px 30px 0px rgba(50, 50, 50, 0.3);
 	box-shadow:         0px 12px 30px 0px rgba(50, 50, 50, 0.3);
+}
+
+.contactButton#companyWebsite {
+	padding:10px 20px;
 }
 
 .contentLoadingIndicator {
