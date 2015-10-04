@@ -1,7 +1,4 @@
 app.controller('ScheduleCtrl', function ($scope, Model) {
-    angular.element(document).ready(function () {
-		adjustFeedContainer();
-    });
 
     Model.getEvents();
 

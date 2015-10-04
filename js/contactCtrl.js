@@ -1,8 +1,4 @@
 app.controller('ContactCtrl', function ($scope, Model) {
-    angular.element(document).ready(function () {
-		  adjustFeedContainer();
-    });
-
 	$scope.loadingMembers = function(){
 		if($scope.branschdagsgruppen() === undefined){
 			return true;
@@ -12,7 +8,6 @@ app.controller('ContactCtrl', function ($scope, Model) {
 	}
 
 	$scope.branschdagsgruppen = function(){
-		adjustFeedContainer();
 		return Model.getBDgruppen();
 	};
 })

@@ -1,20 +1,35 @@
 app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, $http) {
 
-	angular.element(document).ready(function () {
-		adjustFeedContainer();
-	});
-
 	$scope.companyName = $routeParams.companyName;
-	Model.getSingleCompanyEvents($scope.companyName);
+	// Model.getSingleCompanyEvents($scope.companyName);
 
 	$scope.companyInfo = function(){
-		adjustFeedContainer();
 		return Model.getPartner($scope.companyName);
 	}
+
+	console.log($scope.companyInfo());
 
 	$scope.loadingPartners = function(){
 		return Model.loadingPartners();
 	}
+
+	$scope.hasJobs = function(){
+		if($scope.companyInfo()){
+			return Model.companyHasJobs($scope.companyInfo().id);
+		}
+	}
+
+	$scope.companyJobs = function(){
+		return Model.getCompanyJobs($scope.companyInfo().id);
+	}
+
+	$scope.goToJob = function(jobID){
+		$location.path("/jobb/"+jobID);
+	}
+
+	// if($scope.hasJobs()){
+	// 	$scope.companyJobs = Model.getCompanyJobs($scope.companyInfo().id);
+	// }
 
 	if(!$scope.companyInfo()){
 		if(!$scope.loadingPartners()){

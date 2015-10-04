@@ -11,10 +11,19 @@
 		<center>
 			<div ng-hide="companyInfo().placeInExpo === null">Monterplats: <b>{{ companyInfo().placeInExpo}}</b> <br/></div>
 			Typ av partner: <b>{{ companyInfo().type }}</b> <br/>
+			<b><a target="_blank" href="{{ companyInfo().website }}">{{ companyInfo().website }}</a></b><br/>
 		</center>
-		<a target="_blank" href="{{companyInfo().website}}"><div class="contactButton" id="companyWebsite">Hemsida</div></a>
+		<!-- <a target="_blank" href="{{companyInfo().website}}"><div class="contactButton" id="companyWebsite">Hemsida</div></a> -->
 
-		<!-- <a target="_blank" href="{{ companyInfo().website }}">Hemsida</a> <br/> -->
+		<div ng-show="hasJobs()" id="services">
+			<h1>Lediga tjänster</h1>
+
+			<div ng-repeat="job in companyJobs()" class="contactButton" ng-click="goToJob(job.id)">
+				{{ job.jobTitle }}
+			</div>
+			<!-- <div class="contactButton"> Här kommer det finnas mer info om eventuella tjänster</div> -->
+		</div>
+
 	</div>
 	<div id="companyDescription">
 		{{ companyInfo().description }}

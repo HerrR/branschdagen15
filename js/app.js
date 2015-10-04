@@ -22,6 +22,16 @@ app.config(['$routeProvider',
         controller: 'ContactCtrl',
         activeTab: 'contact'
       }).
+      when('/jobb',{
+        templateUrl: 'partials/jobs.html',
+        controller: 'JobsCtrl',
+        activeTab: 'jobs'
+      }).
+      when('/jobb/:jobID',{
+        templateUrl: 'partials/job.html',
+        controller: 'SingleJobCtrl',
+        activeTab: 'jobs'
+      }).
       when('/foretag/:companyName',{
         templateUrl: 'partials/company.html',
         controller: 'CompanyCtrl'

@@ -47,7 +47,6 @@ app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 	}
 
 	$scope.socialMedia = function(){
-		adjustFeedContainer();
 		return Model.getSocialMedia();
 	}
 
@@ -74,14 +73,17 @@ app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 	$scope.companyInfoScroll = function(companyName){
 		// Disabled for now
 		var chosenCompany = Model.getPartner(companyName);
+		// console.log(chosenCompany);
 		if(companyName != null){
 			if(chosenCompany.description === null){
 				// window.location.href=chosenCompany.website;
+
 				window.open(chosenCompany.website, '_blank');
+				
 				// console.log("no company description for given company");
 			} else {
 				$location.path("/foretag/"+companyName);
-				adjustFeedContainer();
+				
 				$('html, body').animate({scrollTop: $(".container").position().top}, 200);
 			}
 		}
@@ -93,11 +95,3 @@ app.filter('capitalize', function() {
       return input.charAt(0).toUpperCase() + input.substr(1).toLowerCase();
     }
 });
-
-$(window).on('resize', function(){
-	adjustFeedContainer();
-});
-
-var adjustFeedContainer = function(){
-	$("#feedContainer").css({'height':($(".container").height()+'px')});
-}

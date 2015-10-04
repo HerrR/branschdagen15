@@ -1,0 +1,13 @@
+<div class="headline">
+	Jobb
+	<hr/>
+</div>
+<div id="aboutText">
+<!-- 	Här finns lediga jobb som du som student kan söka. Om ni som företag är intresserad av att lägga upp ett jobb här så får ni gärna höra av er. Kontaktuppgifter till oss hittar ni på <a ng-href="#/kontakt">kontaktsidan</a>. -->
+
+	<div ng-repeat="job in jobs()" ng-click="goToJob(job.id)" class="offer">
+		<img ng-src="img/companyLogos/{{ job.companyLogo }}"/>
+		<div class="jobTitle">{{ job.jobTitle }}</div>
+	</div>
+
+</div>

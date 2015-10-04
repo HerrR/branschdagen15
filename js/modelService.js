@@ -4,6 +4,7 @@ app.factory('Model', function ($http) {
 	var sendingEmail = false;
 	var loadingPartners = true;
 	var emailSent = false;
+	var loadingJobs = true;
 	var tweets = [];
 	var instaPosts = [];
 	var socialMediaPosts = [];
@@ -14,6 +15,7 @@ app.factory('Model', function ($http) {
 	var activeCompany;
 	var singleCompanyEvents;
 	var loadingSingleCompanyEvents;
+	var jobs;
 
 
 	$http.get("php/getTweets.php")
@@ -94,8 +96,18 @@ app.factory('Model', function ($http) {
 			var allPartners = {"Guld":goldPartners, "Silver":silverPartners, "Föreläsare":lecturers};
 			partners = allPartners;
 
-			console.log(partners);
+			// console.log(partners);
 		});
+
+	$http.get("php/getJobs.php")
+	.success(
+		function(data){
+			for(i in data){
+				data[i].lastDayToApply = new Date(data[i].lastDayToApply);
+			}
+			loadingJobs = false;
+			jobs = data;
+		})
 	
 	this.getSingleCompanyEvents = function(companyName){
 		loadingSingleCompanyEvents = true;
@@ -109,6 +121,25 @@ app.factory('Model', function ($http) {
 	    	loadingSingleCompanyEvents = false;
 	      	singleCompanyEvents = data;
 	    })
+	}
+
+	this.companyHasJobs = function(companyID){
+		for(i in jobs){
+			if(jobs[i].companyID === companyID){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	this.getCompanyJobs = function(companyID){
+		var companyJobs = [];
+		for(i in jobs){
+			if(jobs[i].companyID === companyID){
+				companyJobs.push(jobs[i]);
+			}
+		}
+		return companyJobs;
 	}
 	
 
@@ -131,6 +162,27 @@ app.factory('Model', function ($http) {
 	      	events = data;
 	    })
 	}
+
+	this.getJobByID = function(jobID){
+		if(!jobs){
+			return false;
+		} else {
+			for(job in jobs){
+				if(jobs[job].id === jobID){
+					return jobs[job];
+				}
+			}
+		}
+	}
+
+	this.loadingJobs = function(){
+		return loadingJobs;
+	}
+
+	this.getJobs = function(){
+		return jobs;
+	}
+
 	this.loadingPartners = function(){
 		return loadingPartners;
 	}

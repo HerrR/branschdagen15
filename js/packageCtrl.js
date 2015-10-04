@@ -1,8 +1,4 @@
 app.controller('PackageCtrl', function ($scope, $routeParams, $location, Model) {
-    angular.element(document).ready(function () {
-		  adjustFeedContainer();
-    });
-
     $scope.packageType = $routeParams.packageType;
 
     var packages = ["guldpaketet", "silverpaketet", "föreläsningspaketet"];

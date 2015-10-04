@@ -15,6 +15,6 @@ app.filter('dateFilter', function() {
 app.filter('dateToString', function(){
 	return function(date){
 		var months = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"];
-		return date.split("/")[0]+" "+months[parseInt(date.split("/")[1])]+" "+date.split("/")[2];
+    return date.split("/")[0]+" "+months[parseInt(date.split("/")[1])]+" "+date.split("/")[2];
 	}
 })
