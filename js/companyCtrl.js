@@ -7,7 +7,7 @@ app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, 
 		return Model.getPartner($scope.companyName);
 	}
 
-	console.log($scope.companyInfo());
+	// console.log($scope.companyInfo());
 
 	$scope.loadingPartners = function(){
 		return Model.loadingPartners();

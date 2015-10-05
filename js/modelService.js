@@ -80,6 +80,7 @@ app.factory('Model', function ($http) {
 			var goldPartners = [];
 			var silverPartners = [];
 			var lecturers = [];
+			var sponsors = [];
 
 			for(var i=0;i<data.length;i++){
 				if(data[i].type === "Guld"){
@@ -88,13 +89,16 @@ app.factory('Model', function ($http) {
 					silverPartners.push(data[i]);
 				} else if(data[i].type === "Föreläsare") {
 					lecturers.push(data[i]);
+				} else if(data[i].type === "Sponsor"){
+					sponsors.push(data[i]);
 				} else {
 					console.log("Unknown type of partner "+ data[i]);
 				}
 			}
 
-			var allPartners = {"Guld":goldPartners, "Silver":silverPartners, "Föreläsare":lecturers};
+			var allPartners = {"Guld":goldPartners, "Silver":silverPartners, "Föreläsare":lecturers, "Sponsorer":sponsors};
 			partners = allPartners;
+			console.log(partners);
 
 			// console.log(partners);
 		});

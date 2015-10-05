@@ -425,6 +425,12 @@ body {
 	text-align:center;
 }
 
+.sponsors {
+	box-sizing:border-box;
+	padding:30px;
+	text-align:center;
+}
+
 .partnerCategory {
 	font-family:'Raleway', Sans-Serif;
 	text-align:center;
@@ -457,6 +463,10 @@ body {
 	color:#a87a4d;
 }
 
+.sponsors .partnerCategory {
+	color:#6F6F6F;
+}
+
 .partner {
 	display: inline-block;
 	text-align: center;
@@ -478,6 +488,11 @@ body {
 .lectures .partner {
 	max-width:140px;
 	max-height:100px;
+}
+
+.sponsors .partner {
+	max-width:150px;
+	max-height:150px;
 }
 
 #companyInfo {
@@ -510,8 +525,10 @@ body {
 
 #basicInfo {
 	display:inline-block;
-	width:30%;
-	text-align:left;
+	/*width:30%;*/
+	width:100%;
+	/*text-align:left;*/
+	text-align:center;
 	overflow-x:hidden;
 }
 
@@ -535,8 +552,8 @@ body {
 #companyDescription {
 	display:inline-block;
 	vertical-align: top;
-	width:65%;
-	text-align:left;
+	/*width:65%;*/
+	text-align:justify;
 	white-space: pre-line;
 	/*padding:0px 10px 0px 10px;*/
 }

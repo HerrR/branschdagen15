@@ -13,19 +13,14 @@
 			Typ av partner: <b>{{ companyInfo().type }}</b> <br/>
 			<b><a target="_blank" href="{{ companyInfo().website }}">{{ companyInfo().website }}</a></b><br/>
 		</center>
-		<!-- <a target="_blank" href="{{companyInfo().website}}"><div class="contactButton" id="companyWebsite">Hemsida</div></a> -->
-
 		<div ng-show="hasJobs()" id="services">
 			<h1>Lediga tjänster</h1>
 
 			<div ng-repeat="job in companyJobs()" class="contactButton" ng-click="goToJob(job.id)">
 				{{ job.jobTitle }}
 			</div>
-			<!-- <div class="contactButton"> Här kommer det finnas mer info om eventuella tjänster</div> -->
 		</div>
 
 	</div>
-	<div id="companyDescription">
-		{{ companyInfo().description }}
-	</div>
+	<div id="companyDescription">{{ companyInfo().description }}</div>
 </div>

@@ -62,8 +62,12 @@ app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 		return Model.getPartners()["Silver"];
 	}
 
-		$scope.lecturers = function(){
+	$scope.lecturers = function(){
 		return Model.getPartners()["Föreläsare"];
+	}
+
+	$scope.sponsors = function(){
+		return Model.getPartners()["Sponsorer"];
 	}
 
 	$scope.loadingPartners = function(){
