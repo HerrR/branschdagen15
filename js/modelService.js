@@ -98,7 +98,7 @@ app.factory('Model', function ($http) {
 
 			var allPartners = {"Guld":goldPartners, "Silver":silverPartners, "Föreläsare":lecturers, "Sponsorer":sponsors};
 			partners = allPartners;
-			console.log(partners);
+			// console.log(partners);
 
 			// console.log(partners);
 		});
