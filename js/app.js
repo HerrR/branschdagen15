@@ -22,12 +22,12 @@ app.config(['$routeProvider',
         controller: 'ContactCtrl',
         activeTab: 'contact'
       }).
-      when('/jobb',{
+      when('/intervjuer',{
         templateUrl: 'partials/jobs.html',
         controller: 'JobsCtrl',
         activeTab: 'interviews'
       }).
-      when('/jobb/:jobID',{
+      when('/intervjuer/:jobID',{
         templateUrl: 'partials/job.html',
         controller: 'SingleJobCtrl',
         activeTab: 'interviews'

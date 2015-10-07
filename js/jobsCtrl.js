@@ -5,7 +5,6 @@ app.controller('JobsCtrl', function ($scope, Model, $location) {
     }
 
     $scope.goToJob = function(jobID){
-    	$location.path("/jobb/"+jobID);
+    	$location.path("/intervjuer/"+jobID);
     }
-
 })

@@ -24,7 +24,7 @@ app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, 
 	}
 
 	$scope.goToJob = function(jobID){
-		$location.path("/jobb/"+jobID);
+		$location.path("/intervjuer/"+jobID);
 	}
 
 	// if($scope.hasJobs()){

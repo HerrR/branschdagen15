@@ -40,14 +40,9 @@ body {
 }
 
 #feedContainer {
-	/*max-height:100%;*/
 	height:100%;
-	/*display: inline-block;*/
-	/*position:relative;*/
 	position:absolute;
-	/*vertical-align: top;*/
 	width: 24%;
-	/*height:550px;*/
 	top:0px;
 	right:0px;
 	background-color: rgba(255,255,255,0.15);
@@ -63,8 +58,6 @@ body {
 	overflow-y:scroll;
 	padding-right:50px;
 	width:100%;
-/*	width:-webkit-calc(100% + 20px);
-	width: calc(100% + 20px);*/
 }
 
 .firstPost {
@@ -103,6 +96,8 @@ body {
 .sm-profilePicContainer {
 	display: inline-block;
 	box-sizing:border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
 	padding:10px;
 	width:30%;
 	margin-top:7px;
@@ -160,12 +155,16 @@ body {
 
 .sm-picture {
 	box-sizing:border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
 	padding:5px 7px 0px 7px;
 	max-width:100%;
 }
 
 .sm-text {
 	box-sizing:border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
 	padding:10px 10px 12px;
 	overflow:hidden;
 }
@@ -229,6 +228,8 @@ body {
 
 #bdLogo {
 	box-sizing: border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
 	padding-left: 30px;
 	padding-top: 15px;
 	padding-bottom: 15px;
@@ -239,6 +240,8 @@ body {
 #menuIcon {
 	float: right;
 	box-sizing: border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
 	padding: 20px;
 	max-height: 100%;
 	cursor:pointer;
@@ -388,6 +391,8 @@ body {
 .footerText {
   color: #ddd310;
   box-sizing: border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
   padding: 20px;
   padding-left: 30px;
   font-size: 10pt;
@@ -409,24 +414,32 @@ body {
 
 .gold {
 	box-sizing:border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
 	padding:30px;
 	text-align:center;
 }
 
 .silver {
 	box-sizing:border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
 	padding:30px;
 	text-align:center;
 }
 
 .lectures {
 	box-sizing:border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
 	padding:30px;
 	text-align:center;
 }
 
 .sponsors {
 	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
 	padding:30px;
 	text-align:center;
 }
@@ -496,8 +509,8 @@ body {
 }
 
 #companyInfo {
-	padding: 30px;
-	padding-bottom: 35px;
+	padding-top:35px;
+	padding-bottom:10px;
 	font-family: 'Open Sans', 'Lato', Sans-Serif;
 	color: #1c1c1c;
 	line-height: 20pt;
@@ -525,9 +538,7 @@ body {
 
 #basicInfo {
 	display:inline-block;
-	/*width:30%;*/
 	width:100%;
-	/*text-align:left;*/
 	text-align:center;
 	overflow-x:hidden;
 }
@@ -546,16 +557,63 @@ body {
     cursor: pointer;
     text-align: center;
     box-sizing: border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
     padding: 10px;
 }
 
 #companyDescription {
-	display:inline-block;
-	vertical-align: top;
-	/*width:65%;*/
-	text-align:justify;
-	white-space: pre-line;
-	/*padding:0px 10px 0px 10px;*/
+	text-align:left;
+	white-space:pre-line;
+	padding: 30px;
+	padding-bottom: 35px;
+	font-family: 'Open Sans', 'Lato', Sans-Serif;
+	color: #1c1c1c;
+	line-height: 20pt;
+	box-sizing:border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
+}
+
+#companyDescription a{
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-transition: 0.35s;
+	transition: 0.35s;
+	color: #1c1c1c;
+}
+
+#companyDescription > a:hover{
+	-webkit-transition: 0.35s;
+	transition: 0.35s;
+	color: #ddd310;
+}
+
+#jobDescription {
+	text-align:left;
+	white-space:pre-line;
+	padding:30px;
+	padding-bottom:35px;
+	font-family:'Open Sans', 'Lato', Sans-serif;
+	color: #1c1c1c;
+	line-height:20pt;
+	box-sizing:border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
+}
+
+#jobDescription a{
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-transition: 0.35s;
+	transition: 0.35s;
+	color: #1c1c1c;
+}
+
+#jobDescription > a:hover{
+	-webkit-transition: 0.35s;
+	transition: 0.35s;
+	color: #ddd310;
 }
 
 .companyLogoContainer{
@@ -564,6 +622,8 @@ body {
 	margin-bottom:10px;
 	padding:10px;
 	box-sizing:border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
 }
 
 .contactProfile {
@@ -571,6 +631,8 @@ body {
 	width:20%;
 	vertical-align: top;
 	box-sizing:border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
 	padding:10px;
 	text-align:center;
 }
@@ -599,19 +661,21 @@ body {
 	margin-bottom: -10px;
 	padding: 10px;
 	box-sizing: border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
 }
 
 .contactButton {
     box-sizing: border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
     padding: 20px;
     display: block;
     width: 80%;
-    /*margin:auto;*/
     margin:10px auto 30px auto;
     text-align: center;
     cursor:pointer;
     font-weight:bold;
-    /*margin-top:25px;*/
 	-webkit-box-shadow: 0px 3px 10px 0px rgba(50, 50, 50, 0.3);
 	-moz-box-shadow:    0px 3px 10px 0px rgba(50, 50, 50, 0.3);
 	box-shadow:         0px 3px 10px 0px rgba(50, 50, 50, 0.3);
@@ -655,6 +719,8 @@ body {
 	vertical-align: top;
 	margin:10px 0px 20px 0px;
 	box-sizing:border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
 	padding:15px;
 	-webkit-box-shadow: 0px 3px 10px 0px rgba(50, 50, 50, 0.3);
 	-moz-box-shadow:    0px 3px 10px 0px rgba(50, 50, 50, 0.3);
@@ -725,11 +791,15 @@ body {
 
 .scheduleDate{
 	box-sizing:border-box;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
 	padding:0px 0px 20px 0px;
 }
 .event {
 	margin-bottom:15px;
 	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
 	padding:20px;
 	-webkit-box-shadow: 0px 3px 10px 0px rgba(50, 50, 50, 0.3);
 	-moz-box-shadow:    0px 3px 10px 0px rgba(50, 50, 50, 0.3);
@@ -808,14 +878,6 @@ body {
 		width: 30%;
 	}
 
-	#companyDescription {
-		width:50%;
-	}
-
-	#companyInfo{
-	    padding: 30px 15px 35px 15px;
-	}
-
 	#basicInfo {
 		width:100%;
 		margin-bottom:20px;
@@ -852,8 +914,6 @@ body {
 	}
 
 	#menu.menuClosed {
-		/*-webkit-transition: 0.3s;*/
-		/*transition: 0.3s;*/
 		height: 0px;
 		float:left;
 	}
@@ -897,6 +957,8 @@ body {
 		text-align:right;
 		max-width:inherit;
 		box-sizing:border-box;
+	  	-webkit-box-sizing:border-box;
+	  	-moz-box-sizing:border-box;
 	}
 
 	#menu > a:hover{

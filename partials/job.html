@@ -1,11 +1,9 @@
 <div class="headline">
-	Intervju
+	{{ activeJob().jobTitle }}
 	<hr/>
 </div>
-<div id="aboutText" style="white-space:pre-line;" ng-hide="loadingJobs()">
-	<a ng-href="#/foretag/{{activeJob().companyName}}"><img class="jobInfoLogo" ng-src="img/companyLogos/{{activeJob().companyLogo}}"/></a>
-	<center><div class="jobTitle">{{ activeJob().jobTitle }}</div></center>
-	{{ activeJob().jobDescription }}
+<div id="jobDescription" ng-hide="loadingJobs()">
+	<a ng-href="#/foretag/{{activeJob().companyName}}"><img class="jobInfoLogo" ng-src="img/companyLogos/{{activeJob().companyLogo}}"/></a>{{ activeJob().jobDescription }}
 
-	Intresserad? Skicka din ansökan senast <b>{{ activeJob().lastDayToApply | date: 'dd MMMM yyyy' }}</b> till <a href="mailto:{{activeJob().applyTo}}">{{ activeJob().applyTo }}</a></b>
+	Intresserad? Skicka din ansökan senast <b>{{ activeJob().lastDayToApply | date: 'dd MMMM yyyy' }}</b> till <a href="mailto:{{activeJob().applyTo}}">{{ activeJob().applyTo }}</a></b>. Ansökan ska innehålla CV och en kort motivering.
 </div>
