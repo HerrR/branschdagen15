@@ -17,4 +17,11 @@ app.filter('dateToString', function(){
 		var months = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"];
     return date.split("/")[0]+" "+months[parseInt(date.split("/")[1])]+" "+date.split("/")[2];
 	}
+});
+
+app.filter('swedishDate', function(){
+  return function(date){
+    var months = ["januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"];
+    return date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
+  }
 })
