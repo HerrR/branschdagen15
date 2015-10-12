@@ -1,13 +1,10 @@
 app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, $http) {
 
 	$scope.companyName = $routeParams.companyName;
-	// Model.getSingleCompanyEvents($scope.companyName);
 
 	$scope.companyInfo = function(){
 		return Model.getPartner($scope.companyName);
 	}
-
-	// console.log($scope.companyInfo());
 
 	$scope.loadingPartners = function(){
 		return Model.loadingPartners();
@@ -30,6 +27,7 @@ app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, 
 	// if($scope.hasJobs()){
 	// 	$scope.companyJobs = Model.getCompanyJobs($scope.companyInfo().id);
 	// }
+
 
 	if(!$scope.companyInfo()){
 		if(!$scope.loadingPartners()){

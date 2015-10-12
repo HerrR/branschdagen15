@@ -11,7 +11,7 @@ body {
 #wrapper {
 	min-height: 100%;
 	position: relative;
-	background-image: url("img/branschdagen_background_standing.jpg");
+	background-image: url("img/branschdagen_background_standing_transition.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
