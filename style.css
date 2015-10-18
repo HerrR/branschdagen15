@@ -822,6 +822,14 @@ body {
 	max-width:calc(100% - 130px);
 }
 
+.thankYou {
+	text-align: center;
+    margin-top: 35px;
+    margin-bottom: -25px;
+    color: #ABABAB;
+    font-size: 11pt;
+}
+
 @media (min-width: 2048px){
 	.contactProfile {
 		width:25%;
