@@ -25,6 +25,10 @@ body {
 	box-shadow:         0px 3px 10px 0px rgba(50, 50, 50, 0.3);
 }
 
+#header a:active{
+	text-decoration:none;
+}
+
 #content {
 	display:block;
 	width:80%;
