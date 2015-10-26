@@ -6,11 +6,11 @@
 	$conn = dbConnect($hostname, $username, $password, $database);
 
 	if($singleCompanyEvents){
-		$eventsQuery = "SELECT events.name name, events.type type, events.eventDescription description, events.eventStart eventStart, events.eventEnd eventEnd 
+		$eventsQuery = "SELECT events.name name, events.type type, events.eventDescription description, events.eventStart eventStart, events.eventEnd eventEnd, events.location location, events.registrationURL registrationURL
 		FROM events JOIN partnerEvent ON events.id = partnerEvent.eventID JOIN partners ON partnerEvent.partnerID = partners.id 
 		WHERE partners.name = '".$_GET["companyName"]."';";
 	} else {
-		$eventsQuery = "SELECT events.name name, events.type type, events.eventDescription description, events.eventStart eventStart, events.eventEnd eventEnd 
+		$eventsQuery = "SELECT events.name name, events.type type, events.eventDescription description, events.eventStart eventStart, events.eventEnd eventEnd, events.location location, events.registrationURL registrationURL
 		FROM events ORDER BY eventStart ASC";
 	}
 	
@@ -30,8 +30,10 @@
 		} else {
 			$event['end'] = date('Y/m/d H:i:s', strtotime($line->eventEnd));
 		}
-				// $phpdate = strtotime( $mysqldate );
-// $mysqldate = date( 'Y-m-d H:i:s', $phpdate );
+
+		$event['location'] = $line->location;
+		$event['registrationURL'] = $line->registrationURL;
+
 		array_push($events, $event);
 	}
 

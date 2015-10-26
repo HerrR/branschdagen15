@@ -1,13 +1,21 @@
 <div class="headline">
-	Schema
+	<span ng-show="loadingSchedule()">Laddar schema...</span><span ng-hide="loadingSchedule()">Schema</span>
 	<hr/>
 </div>
 <div id="aboutText">
 	<div ng-repeat="date in eventDates()" class="scheduleDate">
 		<h1>{{ date | dateToString }}</h1>
 		<div ng-repeat="event in schedule() | dateFilter:date" class="event">
-			<div class="eventTimes">
-				{{ event.start | date : 'HH:mm' }} <span ng-hide="event.end === null">- {{ event.end | date : 'HH:mm' }}</span>
+			<div>
+				<div>
+					<img src="img/clockIcon.png" class="scheduleIcon"/>
+					{{ event.start | date : 'HH:mm' }} <span ng-hide="event.end === null">- {{ event.end | date : 'HH:mm' }}</span>
+				</div>
+				<div ng-hide="event.location === null">
+					<img src="img/locationIcon.png" class="scheduleIcon"/>
+					{{ event.location }}
+				</div>
+				<hr/>
 			</div>
 			<div class="eventText">
 				<div class="eventName">
@@ -15,6 +23,9 @@
 				</div>
 				<div class="eventDescription">
 					{{ event.description}}
+				</div>
+				<div class="registration" ng-hide="event.registrationURL === null">
+					Detta event är platsbegränsat, anmälan sker <a ng-href="{{ event.registrationURL }}" target="_blank">här.</a>
 				</div>
 			</div>
 		</div>

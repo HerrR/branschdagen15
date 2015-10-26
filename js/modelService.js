@@ -164,6 +164,7 @@ app.factory('Model', function ($http) {
 	    		}
 	    	}
 	      	events = data;
+	      	// console.log(events);
 	    })
 	}
 
