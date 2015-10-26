@@ -3,7 +3,7 @@
 	include_once('functions.php');
 
 	$conn = dbConnect($hostname, $username, $password, $database);
-	$query = "SELECT * FROM jobs JOIN partners ON jobs.companyID = partners.ID WHERE showOnWebsite = 1;";
+	$query = "SELECT * FROM jobs JOIN partners ON jobs.companyID = partners.ID WHERE showOnWebsite = 1 ORDER BY `viewWeight` DESC;";
 
 	$jobs = array();
 
