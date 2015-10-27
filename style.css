@@ -9,7 +9,7 @@ body {
 }
 
 .bdYellow {
-	color:#ddd310;
+	color:#F0C900;
 }
 
 .bold {
@@ -299,7 +299,7 @@ body {
 }
 
 #partners .headline hr{
-	border: 1.7px solid #ddd310;
+	border: 1.7px solid #F0C900;
 }
 
 #aboutText {
@@ -321,7 +321,7 @@ body {
 #aboutText > a:hover{
 	-webkit-transition: 0.35s;
 	transition: 0.35s;
-	color: #ddd310;
+	color: #F0C900;
 }
 
 #menu {
@@ -331,11 +331,13 @@ body {
 	text-align: center;
 	width:60%;
 	display:inline-block;
-	height:50px;
+	/*height:50px;*/
+	margin-top:30px;
+	vertical-align: top;
 }
 
 #menu .active {
-	color:#ddd310;
+	color:#F0C900;
 }
 
 #menu a {
@@ -356,7 +358,7 @@ body {
 #menu > a:hover{
 	-webkit-transition: 0.35s;
 	transition: 0.35s;
-	color:#ddd310; 
+	color:#F0C900; 
 }
 
 #socialMediaContainer {
@@ -375,13 +377,13 @@ body {
 
 #menu h3 {
 	margin:25px 0px 0px 0px;
-	color:#ddd310;
+	color:#F0C900;
 	font-family:"Lato", "Open Sans", Sans-Serif;
 	padding:0px 30px;
 }
 
 #menu hr {
-	border-color:#ddd310;
+	border-color:#F0C900;
 	width:65%;
 }
 
@@ -407,7 +409,7 @@ body {
 }
 
 .footerText {
-  color: #ddd310;
+  color: #F0C900;
   box-sizing: border-box;
   -webkit-box-sizing:border-box;
   -moz-box-sizing:border-box;
@@ -419,7 +421,7 @@ body {
 }
 
 .footerText a {
-	color: #ddd310;
+	color: #F0C900;
 	text-decoration: none;
 }
 
@@ -471,11 +473,11 @@ body {
 }
 
 .gold .partnerCategory {
-	color:#ddd310;
+	color:#F0C900;
 }
 
 #gold {
-	color:#ddd310;
+	color:#F0C900;
 }
 
 .silver .partnerCategory{
@@ -546,7 +548,7 @@ body {
 #companyInfo > a:hover{
 	-webkit-transition: 0.35s;
 	transition: 0.35s;
-	color: #ddd310;
+	color: #F0C900;
 }
 
 #companyInfo img{
@@ -604,7 +606,7 @@ body {
 #companyDescription > a:hover{
 	-webkit-transition: 0.35s;
 	transition: 0.35s;
-	color: #ddd310;
+	color: #F0C900;
 }
 
 #jobDescription {
@@ -631,7 +633,7 @@ body {
 #jobDescription > a:hover{
 	-webkit-transition: 0.35s;
 	transition: 0.35s;
-	color: #ddd310;
+	color: #F0C900;
 }
 
 .companyLogoContainer{
@@ -902,6 +904,7 @@ body {
 		height:inherit;
 		height:inherit;
 		height: initial;
+		margin-top:0px;
 	}
 	#content {
 		width:90%;
@@ -993,7 +996,7 @@ body {
 
 	#menu > a:hover{
 		color: white; 
-		background-color:#ddd310;
+		background-color:#F0C900;
 	}
 
 	#menu > .socialMediaMenu > a.socialMediaMenuItem:hover{
