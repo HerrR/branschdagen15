@@ -88,7 +88,7 @@ app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 			} else {
 				$location.path("/foretag/"+companyName);
 				
-				$('html, body').animate({scrollTop: $(".container").position().top}, 200);
+				$('html, body').animate({scrollTop: $("#container").offset().top}, 200);
 			}
 		}
 	}
