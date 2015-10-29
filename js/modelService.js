@@ -79,14 +79,18 @@ app.factory('Model', function ($http) {
 
 			var goldPartners = [];
 			var silverPartners = [];
+			var startups = [];
 			var lecturers = [];
 			var sponsors = [];
+			// console.log(data);
 
 			for(var i=0;i<data.length;i++){
 				if(data[i].type === "Guld"){
 					goldPartners.push(data[i]);
 				} else if(data[i].type === "Silver") {
 					silverPartners.push(data[i]);
+				} else if(data[i].type === "Startup") {
+					startups.push(data[i]);
 				} else if(data[i].type === "Föreläsare") {
 					lecturers.push(data[i]);
 				} else if(data[i].type === "Sponsor"){
@@ -96,11 +100,8 @@ app.factory('Model', function ($http) {
 				}
 			}
 
-			var allPartners = {"Guld":goldPartners, "Silver":silverPartners, "Föreläsare":lecturers, "Sponsorer":sponsors};
+			var allPartners = {"Guld":goldPartners, "Silver":silverPartners, "Startups":startups, "Föreläsare":lecturers, "Sponsorer":sponsors};
 			partners = allPartners;
-			// console.log(partners);
-
-			// console.log(partners);
 		});
 
 	$http.get("php/getJobs.php")

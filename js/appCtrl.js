@@ -62,6 +62,10 @@ app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 		return Model.getPartners()["Silver"];
 	}
 
+	$scope.startups = function(){
+		return Model.getPartners()["Startups"];
+	}
+
 	$scope.lecturers = function(){
 		return Model.getPartners()["Föreläsare"];
 	}
@@ -80,11 +84,9 @@ app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 		// console.log(chosenCompany);
 		if(companyName != null){
 			if(chosenCompany.description === null){
-				// window.location.href=chosenCompany.website;
-
-				window.open(chosenCompany.website, '_blank');
-				
-				// console.log("no company description for given company");
+				if(chosenCompany.website != null){
+					window.open(chosenCompany.website, '_blank');
+				}
 			} else {
 				$location.path("/foretag/"+companyName);
 				

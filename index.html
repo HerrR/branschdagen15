@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ma<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="sv" ng-app="branschdag">
 	<head>
 		<title>Branschdagen 2015</title>
@@ -166,6 +166,7 @@
 						</div>
 						<img class="partner" ng-repeat="partner in goldPartners()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{ partner.logo }}">
 					</div>
+
 					<div class="silver">
 						<div class="partnerCategory">
 							Silverpartners
@@ -178,6 +179,13 @@
 							Föreläsare
 						</div>
 						<img class="partner" ng-repeat="partner in lecturers()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{ partner.logo }}">
+					</div>
+
+					<div class="startups">
+						<div class="partnerCategory">
+							Startups
+						</div>
+						<img class="partner" ng-repeat="partner in startups()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{ partner.logo }}">
 					</div>
 
 					<div class="sponsors">
