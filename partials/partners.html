@@ -1,0 +1,38 @@
+<div class="headline">
+	Samarbetspartners
+	<hr/>
+</div>
+<div class="gold">
+	<div class="partnerCategory">
+		Guldpartners
+	</div>
+	<img class="partner" ng-repeat="partner in goldPartners()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{ partner.logo }}">
+</div>
+
+<div class="silver">
+	<div class="partnerCategory">
+		Silverpartners
+	</div>
+	<img class="partner" ng-repeat="partner in silverPartners()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{ partner.logo }}">
+</div>
+
+<div class="lectures">
+	<div class="partnerCategory">
+		Föreläsare
+	</div>
+	<img class="partner" ng-repeat="partner in lecturers()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{ partner.logo }}">
+</div>
+
+<div class="startups">
+	<div class="partnerCategory">
+		Startups
+	</div>
+	<img class="partner" ng-repeat="partner in startups()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{ partner.logo }}">
+</div>
+
+<div class="sponsors">
+	<div class="partnerCategory">
+		Sponsorer
+	</div>
+	<img class="partner" ng-repeat="partner in sponsors()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{ partner.logo }}">
+</div>

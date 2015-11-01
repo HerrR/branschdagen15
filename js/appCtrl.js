@@ -50,10 +50,6 @@ app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 		return Model.getSocialMedia();
 	}
 
-	// $scope.partners = function(){
-	// 	return Model.getPartners();
-	// }
-
 	$scope.goldPartners = function(){
 		return Model.getPartners()["Guld"];
 	}
@@ -89,10 +85,14 @@ app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 				}
 			} else {
 				$location.path("/foretag/"+companyName);
-				
-				$('html, body').animate({scrollTop: $("#container").offset().top}, 200);
+				$scope.topContainerScroll();
+				// $('html, body').animate({scrollTop: $("#container").offset().top}, 200);
 			}
 		}
+	}
+
+	$scope.topContainerScroll = function(){
+		$('html, body').animate({scrollTop: $("#container").offset().top}, 200);
 	}
 })
 

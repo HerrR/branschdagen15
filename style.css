@@ -932,9 +932,11 @@ body {
 	}
 
 	#menu.menuOpen{
-		-webkit-transition: 0.3s;
-		transition: 0.3s;
-		height:100%;
+		-webkit-transition: height 0.3s;
+		transition: height 0.3s;
+		/*height:100%;*/
+		height:inherit;
+		padding-bottom:15px;
 		float:none;
 	}
 

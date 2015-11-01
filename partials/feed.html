@@ -1,0 +1,67 @@
+<div class="headline">
+	Nyheter
+	<hr/>
+</div>
+<div class="arrowBox" ng-click="previousPost()">
+	<div class="previousPost">
+	</div>
+</div>
+<div id="feedContent">
+	<img src="img/Media Loading.gif" ng-show="loadingSocialMedia()" class="loadingIcon"/>
+
+	<div ng-repeat="post in socialMedia() | orderBy: 'created':true" id="post_{{$index}}" ng-class="{firstPost : $first, lastPost : $last}" >
+		<div ng-if="post.type == 'tweet' ">
+			<div class="sm-post" id="tweet">
+				<div class="sm-header">
+					<div class="sm-profilePicContainer">
+						<img ng-src="{{post.profilePic}}" class="sm-profilePic"/>
+					</div>
+					<div class="sm-userInfoContainer">
+						<a href="{{ post.profileURL }}"><div class="sm-username">
+							{{ post.name }}
+						</div></a>
+						<div class="sm-via">
+							via Twitter
+						</div>
+						<div class="sm-created">
+							{{ post.created | date:"dd/MM/yyyy"}}
+						</div>
+					</div>
+				</div>
+				<div class="sm-text">
+					{{ post.text }}
+				</div>
+			</div>
+		</div>
+		<div ng-if="post.type == 'instagram' ">
+			<div class="sm-post" id="instagram">
+				<div class="sm-header">
+					<div class="sm-profilePicContainer">
+						<img ng-src="{{post.profilePic}}" class="sm-profilePic"/>
+					</div>
+					<div class="sm-userInfoContainer">
+						<a href="{{ post.profileURL }}"><div class="sm-username">
+							{{ post.name }}
+						</div></a>
+						<div class="sm-via">
+							via Instagram
+						</div>
+						<div class="sm-created">
+							{{ post.created | date:"dd/MM/yyyy" }}
+						</div>
+					</div>
+				</div>
+				<div class="sm-pictureContainer">
+					<img ng-src="{{ post.picture }}" class="sm-picture"/>
+				</div>
+				<div class="sm-text">
+					{{ post.text }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="arrowBox bottom" ng-click="nextPost()">
+	<div class="nextPost">
+	</div>
+</div>

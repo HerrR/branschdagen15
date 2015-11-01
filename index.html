@@ -1,4 +1,4 @@
-ma<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="sv" ng-app="branschdag">
 	<head>
 		<title>Branschdagen 2015</title>
@@ -60,141 +60,13 @@ ma<!DOCTYPE html>
 	</head>
 	<body ng-controller="AppCtrl">
 		<div id="wrapper">
-			<div id="header">
-				<a ng-href="#/">
-					<div id="bdLogoContainer">
-						<img src="img/Branschdagen_logo_new_3.png" id="bdLogo"/>
-					</div>
-				</a>
-				<img src="img/menu_icon.png" id="menuIcon" ng-click="toggleMenu()"/>
-
-				<div id="menu" class="menuClosed">
-					<a ng-class="{active: $route.current.activeTab == 'home'}" href="#/">Hem</a>
-					<a ng-class="{active: $route.current.activeTab == 'schedule'}" href="#/schema">Schema</a>
-					<a ng-class="{active: $route.current.activeTab == 'prices'}" href="#/prislista">Prislista</a>
-					<a ng-class="{active: $route.current.activeTab == 'interviews'}" href="#/intervjuer">Intervjuer</a>
-					<a ng-class="{active: $route.current.activeTab == 'contact'}" href="#/kontakt">Kontakt</a>
-					<div class="socialMediaMenu">
-						<h3> Branschdagen i sociala medier </h3>
-						<hr/>
-						<a href="https://twitter.com/branschdag" target="_blank" class="socialMediaMenuItem"><img src="img/Instagram.svg"/></a>
-						<a href="https://instagram.com/branschdag/" target="_blank" class="socialMediaMenuItem"><img src="img/Twitter.svg"/></a>
-					</div>
-				</div>
-			</div>
+			<div id="header" ng-include="'partials/header.html'"></div>
 			<div id="content">
 				<div id="contentAndFeed">
-					<div class="container" id="container" ng-view></div><div id="feedContainer">
-						<div class="headline">
-							Nyheter
-							<hr/>
-						</div>
-						<div class="arrowBox" ng-click="previousPost()">
-							<div class="previousPost">
-							</div>
-						</div>
-						<div id="feedContent">
-							<img src="img/Media Loading.gif" ng-show="loadingSocialMedia()" class="loadingIcon"/>
-
-							<div ng-repeat="post in socialMedia() | orderBy: 'created':true" id="post_{{$index}}" ng-class="{firstPost : $first, lastPost : $last}" >
-								<div ng-if="post.type == 'tweet' ">
-									<div class="sm-post" id="tweet">
-										<div class="sm-header">
-											<div class="sm-profilePicContainer">
-												<img ng-src="{{post.profilePic}}" class="sm-profilePic"/>
-											</div>
-											<div class="sm-userInfoContainer">
-												<a href="{{ post.profileURL }}"><div class="sm-username">
-													{{ post.name }}
-												</div></a>
-												<div class="sm-via">
-													via Twitter
-												</div>
-												<div class="sm-created">
-													{{ post.created | date:"dd/MM/yyyy"}}
-												</div>
-											</div>
-										</div>
-										<div class="sm-text">
-											{{ post.text }}
-										</div>
-									</div>
-								</div>
-								<div ng-if="post.type == 'instagram' ">
-									<div class="sm-post" id="instagram">
-										<div class="sm-header">
-											<div class="sm-profilePicContainer">
-												<img ng-src="{{post.profilePic}}" class="sm-profilePic"/>
-											</div>
-											<div class="sm-userInfoContainer">
-												<a href="{{ post.profileURL }}"><div class="sm-username">
-													{{ post.name }}
-												</div></a>
-												<div class="sm-via">
-													via Instagram
-												</div>
-												<div class="sm-created">
-													{{ post.created | date:"dd/MM/yyyy" }}
-												</div>
-											</div>
-										</div>
-										<div class="sm-pictureContainer">
-											<img ng-src="{{ post.picture }}" class="sm-picture"/>
-										</div>
-										<div class="sm-text">
-											{{ post.text }}
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="arrowBox bottom" ng-click="nextPost()">
-							<div class="nextPost">
-							</div>
-						</div>
-					</div>
+					<div class="container" id="container" ng-view></div>
+					<div id="feedContainer" ng-include="'partials/feed.html'"></div>
 				</div>
-
-				<div id="partners" ng-hide="loadingPartners()">
-					<div class="headline">
-						Samarbetspartners
-						<hr/>
-					</div>
-					<div class="gold">
-						<div class="partnerCategory">
-							Guldpartners
-						</div>
-						<img class="partner" ng-repeat="partner in goldPartners()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{ partner.logo }}">
-					</div>
-
-					<div class="silver">
-						<div class="partnerCategory">
-							Silverpartners
-						</div>
-						<img class="partner" ng-repeat="partner in silverPartners()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{ partner.logo }}">
-					</div>
-
-					<div class="lectures">
-						<div class="partnerCategory">
-							Föreläsare
-						</div>
-						<img class="partner" ng-repeat="partner in lecturers()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{ partner.logo }}">
-					</div>
-
-					<div class="startups">
-						<div class="partnerCategory">
-							Startups
-						</div>
-						<img class="partner" ng-repeat="partner in startups()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{ partner.logo }}">
-					</div>
-
-					<div class="sponsors">
-						<div class="partnerCategory">
-							Sponsorer
-						</div>
-						<img class="partner" ng-repeat="partner in sponsors()" ng-click="companyInfoScroll(partner.name)" ng-src="img/companyLogos/{{ partner.logo }}">
-					</div>
-				</div>
+				<div id="partners" ng-hide="loadingPartners()" ng-include="'partials/partners.html'"></div>
 			</div>
 		<div id="footer">
 			<div class="footerText">Sektionen för Medieteknik, KTH<br/>
