@@ -260,7 +260,6 @@ body {
   	-webkit-box-sizing:border-box;
   	-moz-box-sizing:border-box;
 	padding: 20px;
-	/*max-height: 100%;*/
 	height:65px;
 	margin-top:10px;
 	cursor:pointer;
@@ -332,7 +331,6 @@ body {
 	text-align: center;
 	width:60%;
 	display:inline-block;
-	/*height:50px;*/
 	margin-top:30px;
 	vertical-align: top;
 }
@@ -922,7 +920,6 @@ body {
 
 @media (max-width: 725px){
 	#menuIcon {
-		/*display:inherit;*/
 		display:inline-block;
 	}
 
@@ -934,7 +931,6 @@ body {
 	#menu.menuOpen{
 		-webkit-transition: height 0.3s;
 		transition: height 0.3s;
-		/*height:100%;*/
 		height:inherit;
 		padding-bottom:15px;
 		float:none;

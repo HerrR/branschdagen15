@@ -8,7 +8,6 @@ app.controller('SingleJobCtrl', function ($scope, Model, $location, $routeParams
 
 	$scope.activeJob = function(){
 		if(!$scope.loadingJobs()){
-			// console.log(Model.getJobByID($scope.activeJobID));
 			return Model.getJobByID($scope.activeJobID);
 		}
 	}

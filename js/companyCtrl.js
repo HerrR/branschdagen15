@@ -24,11 +24,6 @@ app.controller('CompanyCtrl', function ($scope, $routeParams, $location, Model, 
 		$location.path("/intervjuer/"+jobID);
 	}
 
-	// if($scope.hasJobs()){
-	// 	$scope.companyJobs = Model.getCompanyJobs($scope.companyInfo().id);
-	// }
-
-
 	if(!$scope.companyInfo()){
 		if(!$scope.loadingPartners()){
 		 	$location.path("/home");

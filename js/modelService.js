@@ -33,9 +33,6 @@ app.factory('Model', function ($http) {
 				var dateSubs = currentTweet.created_at.split(" ");
 				tweetEssentials.created = new Date(new Date(dateSubs[0]+" "+dateSubs[1]+" "+dateSubs[2]+" "+dateSubs[5]+" "+dateSubs[3]+" GMT"+dateSubs[4]));
 
-				// var test = currentTweet.created_at.split(" ");
-				// console.log(new Date(test[0]+" "+test[1]+" "+test[2]+" "+test[5]+" "+test[3]+" GMT"+test[4]));
-
 				tweetEssentials.name = currentTweet.user.name;
 				tweetEssentials.profilePic = currentTweet.user.profile_image_url;
 				tweetEssentials.text = currentTweet.text;
@@ -82,7 +79,6 @@ app.factory('Model', function ($http) {
 			var startups = [];
 			var lecturers = [];
 			var sponsors = [];
-			// console.log(data);
 
 			for(var i=0;i<data.length;i++){
 				if(data[i].type === "Guld"){
@@ -165,7 +161,6 @@ app.factory('Model', function ($http) {
 	    		}
 	    	}
 	      	events = data;
-	      	// console.log(events);
 	    })
 	}
 

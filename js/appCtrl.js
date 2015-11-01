@@ -75,9 +75,7 @@ app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 	}
 
 	$scope.companyInfoScroll = function(companyName){
-		// Disabled for now
 		var chosenCompany = Model.getPartner(companyName);
-		// console.log(chosenCompany);
 		if(companyName != null){
 			if(chosenCompany.description === null){
 				if(chosenCompany.website != null){
@@ -86,7 +84,6 @@ app.controller('AppCtrl', function ($scope, $route, Model, $location) {
 			} else {
 				$location.path("/foretag/"+companyName);
 				$scope.topContainerScroll();
-				// $('html, body').animate({scrollTop: $("#container").offset().top}, 200);
 			}
 		}
 	}
