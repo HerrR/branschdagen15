@@ -50,6 +50,16 @@ app.filter('hasPlaceInExpo', function(){
         }
       }
     }
+
+    toBeReturned.sort(function(x, y){ 
+      if (x.placeInExpo < y.placeInExpo) {
+        return -1;
+      }
+      if (x.placeInExpo > y.placeInExpo) {
+          return 1;
+      }
+      return 0;
+    });
     return toBeReturned;
   }
 })

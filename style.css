@@ -29,6 +29,7 @@ body {
 }
 
 #header {
+	text-align: center;
 	width: 100%;
 	background-color: #2d2d2a;
 	min-height: 80px;
@@ -238,19 +239,20 @@ body {
 }
 
 #bdLogoContainer {
-	height:80px;
-	display:inline-block;
-	min-width:20%;
+    height: 80px;
+    max-width: 25%;
+    margin-left: 10%;
+    display: inline-block;
+    float: left;
 }
 
 #bdLogo {
-	box-sizing: border-box;
-  	-webkit-box-sizing:border-box;
-  	-moz-box-sizing:border-box;
-	padding-left: 30px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	max-height: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding:15px 0px;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 
@@ -325,14 +327,18 @@ body {
 }
 
 #menu {
-	overflow: hidden;
-	background-color: #2d2d2a;
-	color: white;
-	text-align: center;
-	width:60%;
-	display:inline-block;
-	margin-top:30px;
-	vertical-align: top;
+    margin-right: 10%;
+    float: right;
+    overflow: hidden;
+    background-color: #2d2d2a;
+    color: white;
+    text-align: center;
+    width: 60%;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    padding: 25px 0px;
+    -webkit-box-sizing: border-box;
 }
 
 #menu .active {
@@ -340,11 +346,11 @@ body {
 }
 
 #menu a {
-	display: inline-block;
-	width: 200px;
-	max-width: 18%;
-	font-size: 15pt;
-	font-family: 'Lato', "Open Sans", Sans-Serif;
+    display: inline-block;
+    width: 15%;
+    /*max-width: 18%;*/
+    font-size: 15pt;
+    font-family: 'Lato', "Open Sans", Sans-Serif;
 }
 
 #menu a{
@@ -904,26 +910,29 @@ body {
 
 
 @media (max-width: 1024px){
+	#bdLogoContainer {
+		margin-left:5%;
+	}
 	#bdLogo {
 		padding:20px;
 	}
 
 	#menu a{
-		width:inherit;
-		width: initial;
-		max-width:inherit;
-		max-width: initial;
-		padding: 0px 5px 0px 5px;
+		/*width:inherit;*/
+		/*width: initial;*/
+		/*max-width:inherit;*/
+		/*max-width: initial;*/
+		/*padding: 0px 5px 0px 5px;*/
 	}
 	#menu{
-		width:inherit;
-		width: initial;
+/*		width:inherit;
+		width: initial;*/
 		float: right;
-		padding: 30px 20px 0px 0px;
-		margin-right:10px;
+		/*padding: 30px 20px 0px 0px;*/
+		margin-right:5%;
+/*		height:inherit;
 		height:inherit;
-		height:inherit;
-		height: initial;
+		height: initial;*/
 		margin-top:0px;
 	}
 	#content {
@@ -958,7 +967,7 @@ body {
 	}
 }
 
-@media (max-width: 725px){
+@media (max-width: 850px){
 	#menuIcon {
 		display:inline-block;
 	}
@@ -997,7 +1006,11 @@ body {
 	}
 
 	#bdLogo {
-		padding:20px 0px 20px 30px;
+		/*padding:20px 0px 20px 30px;*/
+	}
+	#bdLogoContainer {
+		margin-left:2.5%;
+		max-width:50%;
 	}
 
 	#feedContainer {
@@ -1066,7 +1079,8 @@ body {
 	}
 
 	#bdLogo {
-		padding:26px 0px 26px 15px;
+		/*padding:26px 0px 26px 15px;*/
+		padding:25px 0px;
 	}
 	.contactProfile {
 		width:100%;

@@ -1856,7 +1856,7 @@
 		<rect id="D3-square" ng-mouseover="boxIndicate('D3', true)" ng-mouseout="boxIndicate('D3', false)" x="1095.169" y="846.398" class="boothSquare" width="72.5" height="72.5"/>
 		<rect id="D2-square" ng-mouseover="boxIndicate('D2', true)" ng-mouseout="boxIndicate('D2', false)" x="914.54" y="845.905" class="boothSquare" width="108.75" height="72.5"/>
 		<rect id="D1-square" ng-mouseover="boxIndicate('D1', true)" ng-mouseout="boxIndicate('D1', false)" x="765.898" y="845.905" class="boothSquare" width="108.75" height="72.5"/>
-		<rect id="C6-square" ng-mouseover="boxIndicate('C6', true)" ng-mouseout="boxIndicate('C6', false)" x="1341.669" y="760.354" class="boothSquare" width="72.5" height="72.5"/>
+		<rect id="C6-square" ng-mouseover="boxIndicate('C6', true)" ng-mouseout="boxIndicate('C6', false)" x="1310.669" y="760.354" class="boothSquare" width="108.75" height="72.5"/>
 		<rect id="C5-square" ng-mouseover="boxIndicate('C5', true)" ng-mouseout="boxIndicate('C5', false)" x="1200.294" y="760.354" class="boothSquare" width="72.5" height="72.5"/>
 		<rect id="C4-square" ng-mouseover="boxIndicate('C4', true)" ng-mouseout="boxIndicate('C4', false)" x="1067.377" y="760.354" class="boothSquare" width="72.5" height="72.5"/>
 		<rect id="C3-square" ng-mouseover="boxIndicate('C3', true)" ng-mouseout="boxIndicate('C3', false)" x="926.012" y="761.917" class="boothSquare" width="72.5" height="72.5"/>
@@ -1888,7 +1888,7 @@
 		<text transform="matrix(1 0 0 1 943.9373 809.4446)" id="C3" class="boothText" ng-mouseover="boxIndicate('C3', true)" ng-mouseout="boxIndicate('C3',false)">C3</text>
 		<text transform="matrix(1 0 0 1 1085.7969 809.4446)" id="C4" class="boothText" ng-mouseover="boxIndicate('C4', true)" ng-mouseout="boxIndicate('C4',false)">C4</text>
 		<text transform="matrix(1 0 0 1 1213.5 809.4446)" id="C5" class="boothText" ng-mouseover="boxIndicate('C5', true)" ng-mouseout="boxIndicate('C5',false)">C5</text>
-		<text transform="matrix(1 0 0 1 1360.624 809.4446)" id="C6" class="boothText" ng-mouseover="boxIndicate('C6', true)" ng-mouseout="boxIndicate('C6',false)">C6</text>
+		<text transform="matrix(1 0 0 1 1347.624 809.4446)" id="C6" class="boothText" ng-mouseover="boxIndicate('C6', true)" ng-mouseout="boxIndicate('C6',false)">C6</text>
 		<text transform="matrix(1 0 0 1 802.0776 893.9567)" id="D1" class="boothText" ng-mouseover="boxIndicate('D1', true)" ng-mouseout="boxIndicate('D1',false)">D1</text>
 		<text transform="matrix(1 0 0 1 948.4647 893.9567)" id="D2" class="boothText" ng-mouseover="boxIndicate('D2', true)" ng-mouseout="boxIndicate('D2',false)">D2</text>
 		<text transform="matrix(1 0 0 1 1112.1885 893.9567)" id="D3" class="boothText" ng-mouseover="boxIndicate('D3', true)" ng-mouseout="boxIndicate('D3',false)">D3</text>
@@ -1896,13 +1896,14 @@
 		<text transform="matrix(1 0 0 1 148.9206 572.4395)" id="CV" class="boothText">CV-foto</text>
 	</g>
 </svg>
+
 <div class="mapColumn">
 	<div ng-repeat="partner in partners() | hasPlaceInExpo | limitTo:columnDistribution()[0] " ng-mouseover="textIndicate(partner.placeInExpo, true)" ng-mouseout="textIndicate(partner.placeInExpo, false)" class="mapPartnerText" id="{{partner.placeInExpo}}-text">
-		{{ partner.name }}
+		{{ partner.placeInExpo }}. {{ partner.name }}
 	</div>
 </div><div class="mapColumn">
 	<div ng-repeat="partner in partners() | hasPlaceInExpo | limitTo:columnDistribution()[1]:columnDistribution()[0]" ng-mouseover="textIndicate(partner.placeInExpo, true)" ng-mouseout="textIndicate(partner.placeInExpo, false)" class="mapPartnerText" id="{{partner.placeInExpo}}-text">
-		{{ partner.name }}
+		{{ partner.placeInExpo }}. {{ partner.name }}
 	</div>
 </div>
 </div>
