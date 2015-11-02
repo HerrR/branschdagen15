@@ -29,3 +29,27 @@ app.filter('swedishDate', function(){
     }
   }
 })
+
+app.filter('hasPlaceInExpo', function(){
+  return function(partners){
+    var toBeReturned = [];
+
+    var checkDuplicate = function(toBeTestet){
+      for(partner in toBeReturned){
+        if(toBeTestet.name === toBeReturned[partner].name){
+          return false;
+        }
+      }
+      toBeReturned.push(toBeTestet);
+    }
+
+    for(category in partners){
+      for(partner in partners[category]){
+        if(partners[category][partner].placeInExpo != null){
+          checkDuplicate(partners[category][partner])
+        }
+      }
+    }
+    return toBeReturned;
+  }
+})

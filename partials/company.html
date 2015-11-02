@@ -9,7 +9,7 @@
 			<a href="{{ companyInfo().website }}" target="_blank"><img ng-src="img/companyLogos/{{ companyInfo().logo }}"/></a><br/>
 		</div>
 		<center>
-			<div ng-hide="companyInfo().placeInExpo === null">Monterplats: <b>{{ companyInfo().placeInExpo}}</b> <br/></div>
+			<div ng-hide="companyInfo().placeInExpo === null">Monterplats: <a class="mapLink" ng-href="#/monterplatser">{{ companyInfo().placeInExpo}}</a> <br/></div>
 			Typ av partner: <b>{{ companyInfo().type }}</b> <br/>
 			<b><a target="_blank" href="{{ companyInfo().website }}">{{ companyInfo().website }}</a></b><br/>
 		</center>

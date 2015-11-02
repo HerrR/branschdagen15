@@ -843,6 +843,45 @@ body {
     font-size: 11pt;
 }
 
+.mapLink {
+	font-size:15pt;
+	font-weight:bold;
+}
+
+.boothSquare {
+	fill:#2D2D2A;
+	cursor: pointer;
+}
+
+.boothSquare.boxIndicated {
+	fill:#F0C900;
+}
+
+.mapPartnerText{
+	cursor:pointer;
+}
+
+.mapPartnerText:hover{
+	font-weight: bold;
+}
+
+.mapPartnerText.active{
+	font-weight:bold;
+}
+
+.boothText {
+	fill:#F2F2F2;
+	font-family:'Lato', 'Open Sans', Sans-Serif; 
+	font-size:31px;
+	cursor: pointer;
+}
+
+.mapColumn {
+	width:50%;
+	display:inline-block;
+	vertical-align: top;
+}
+
 @media (min-width: 2048px){
 	.contactProfile {
 		width:25%;
@@ -881,6 +920,7 @@ body {
 		width: initial;
 		float: right;
 		padding: 30px 20px 0px 0px;
+		margin-right:10px;
 		height:inherit;
 		height:inherit;
 		height: initial;

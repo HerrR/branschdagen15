@@ -36,6 +36,11 @@ app.config(['$routeProvider',
         templateUrl: 'partials/company.html',
         controller: 'CompanyCtrl'
       }).
+      when('/monterplatser', {
+        templateUrl: 'partials/map.html',
+        controller: 'MapCtrl'
+        // activeTab: 'prices'
+      }).
       when('/prislista/:packageType', {
         templateUrl: 'partials/package.html',
         controller: 'PackageCtrl',
