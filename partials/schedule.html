@@ -21,9 +21,7 @@
 				<div class="eventName">
 					{{ event.name }}
 				</div>
-				<div class="eventDescription">
-					{{ event.description}}
-				</div>
+				<div class="eventDescription">{{ event.description}}</div>
 				<div class="registration" ng-hide="event.registrationURL === null">
 					Detta event är platsbegränsat, anmälan sker <a ng-href="{{ event.registrationURL }}" target="_blank">här.</a>
 				</div>

@@ -12,6 +12,10 @@ body {
 	color:#F0C900;
 }
 
+.eventDescription {
+	white-space: pre-line;
+}
+
 .bold {
 	font-weight:bold;
 }
@@ -823,6 +827,7 @@ body {
 }
 
 .eventName {
+	margin-bottom:5px;
 	font-weight:bold;
 	font-size:14pt;
 	font-family: 'Lato', Sans-Serif;
@@ -983,6 +988,7 @@ body {
 		height:inherit;
 		padding-bottom:15px;
 		float:none;
+		margin:0;
 	}
 
 	#menu.menuClosed {
